@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Button({ text, link, size, style, width }) {
+function Button({ text, link, size, styleClass, width }) {
   return (
     <button
-      className={`btn btn--border btn--${style} btn--${size} ${width}`}
+      className={`btn btn--border btn--${styleClass} btn--${size} ${width}`}
       aria-label="Button"
     >
       <Link

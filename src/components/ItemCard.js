@@ -20,7 +20,7 @@ function ItemCard({ image, link, title }) {
             text="Xem chi tiết"
             link={link}
             size="md"
-            style="1"
+            styleClass="1"
             width="w-full"
           />
         </div>
