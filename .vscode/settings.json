@@ -1,0 +1,141 @@
+// {
+//   "files.exclude": {
+//     "**/.git": true,
+//     "**/.svn": true,
+//     "**/.hg": true,
+//     "**/CVS": true,
+//     "**/.DS_Store": true,
+//     "**/.turbo": true,
+//     "**/.docusaurus": true,
+//     "**/node_modules": true
+//   },
+//   "[typescriptreact]": {
+//     "editor.formatOnSave": true
+//   },
+//   "[markdown]": {
+//     "editor.formatOnSave": true
+//   },
+//   "editor.codeActionsOnSave": {
+//     "source.fixAll.eslint": true,
+//     "source.fixAll": true
+//   },
+//   "scss.scannerExclude": [
+//     "**/.git"
+//   ],
+//   "eslint.workingDirectories": [
+//     "src"
+//   ],
+//   "html.customData": ["./packages/webcomponents/web-component.json"],
+// }
+
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontSize": 15,
+    "editor.fontWeight": "400",
+    // "editor.fontFamily": "Hack Nerd Font, Fira Code",
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 34,
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": true,
+    "files.associations": {
+      "*.js": "javascriptreact",
+      "*.mjs": "javascriptreact",
+      "*.ts": "typescriptreact",
+      "*.tsx": "typescriptreact",
+      "*.md": "mdx"
+    },
+    "editor.formatOnSave": false,
+    "[javascriptreact]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.formatOnSave": false,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+      "editor.formatOnSave": true
+    },
+    "git.ignoreMissingGitWarning": true,
+    // "terminal.integrated.fontFamily": "Hack Nerd Font",
+    // "terminal.integrated.fontSize": 13,
+    "git.enableSmartCommit": true,
+    "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+    "javascript.suggest.completeFunctionCalls": true,
+    "scss.lint.validProperties": ["composes"],
+    // "javascript.format.enable": false,
+    // "javascript.validate.enable": false,
+    "editor.renderWhitespace": "none",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveServer.settings.donotShowInfoMsg": true,
+    "git.autofetch": true,
+    "http.proxySupport": "off",
+    // "terminal.integrated.shell.osx": "/bin/zsh",
+    "explorer.compactFolders": false,
+    "jestrunner.jestCommand": "yarn test",
+    "editor.inlineSuggest.enabled": true,
+    "editor.suggest.preview": false,
+    "github.copilot.enable": {
+      "*": true
+    },
+    "workbench.colorTheme": "Default Dark Modern",
+    "update.mode": "manual",
+    "http.systemCertificates": false,
+    "workbench.colorCustomizations": {
+      "errorLens.errorBackground": "#bb68680a",
+      "errorLens.errorForeground": "#bb6868",
+      "errorLens.warningBackground": "#c3936614",
+      "errorLens.warningForeground": "#c39366",
+      "errorLens.infoBackground": "#5aafc411",
+      "errorLens.infoForeground": "#5aaec4"
+    },
+    "errorLens.fontSize": "14",
+    "bracketPairColorizer.depreciation-notice": false,
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[liquid]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "Shopify.theme-check-vscode"
+    },
+    "indentRainbow.indicatorStyle": "light",
+    "indentRainbow.lightIndicatorStyleLineWidth": 1,
+    "indentRainbow.colors": ["rgba(255,255,64,0.2)", "rgba(127,255,127,0.2)", "rgba(255,127,255,0.2)", "rgba(79,236,236,0.2)"],
+    "indentRainbow.includedLanguages": ["liquid", "twig", "html"],
+    "editor.accessibilitySupport": "off",
+    "editor.wordWrap": "on",
+    "html.validate.styles": false,
+    "mjml.beautifyHtmlOutput": true,
+    "mjml.minifyHtmlOutput": false,
+    "workbench.editorAssociations": {
+      "*.br": "default"
+    },
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "[python]": {
+      "editor.formatOnType": true
+    },
+    "githubPullRequests.pullBranch": "never",
+    "errorLens.excludeBySource": ["ts(2345)", "ts(6133)"],
+    "git.confirmSync": false,
+    "shopifyLiquid.shopifyCLIPath": "/Users/PC/AppData/Roaming/npm/node_modules/@shopify/cli",
+    "themeCheck.onlySingleFileChecks": true,
+    "themeCheck.checkOnSave": true,
+    "emmet.includeLanguages": {
+      "liquid": "html"
+    },
+    "html.autoClosingTags": true
+  }
+  

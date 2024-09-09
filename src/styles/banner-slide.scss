@@ -1,0 +1,21 @@
+.banner-carousel__content{
+  height: 572px;
+}
+
+@media screen and (min-width: 768px ){
+  .banner-carousel__content{
+    height: 60vh;
+  }
+}
+
+@media screen and (min-width: 992px ){
+  .banner-carousel__content{
+    height: 80vh;
+  }
+}
+
+@media screen and (min-width: 1200px ){
+  .banner-carousel__content{
+    height: calc(100vh - 150px);
+  }
+}

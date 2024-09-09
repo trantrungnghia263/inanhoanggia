@@ -1,0 +1,30 @@
+.blog-page{
+  .heading-section{
+    .container{
+      padding: 0;
+    }
+
+    .heading-section__title{
+      margin-top: 4px;
+    }
+  }
+
+  .blog-card__date{
+    width: 70%;
+    padding-inline-start: 30px;
+    padding-inline-end: 30px;
+  }
+
+  .swiper-pagination{
+    display: none;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next{
+    &::after{
+      content: "";
+      width: 0;
+      height: 0;
+    }
+  }
+}

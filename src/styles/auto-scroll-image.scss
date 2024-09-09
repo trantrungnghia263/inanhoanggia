@@ -1,0 +1,11 @@
+.auto-scroll-image__image {
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.auto-scroll-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
