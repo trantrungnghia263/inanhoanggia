@@ -45,7 +45,7 @@ function ContactForm() {
 
       return () => clearTimeout(timer);
     }
-  }, [notification, closeNotification]);
+  }, [notification]);
 
   return (
     <div className="contact-form">

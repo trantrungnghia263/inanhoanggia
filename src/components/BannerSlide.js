@@ -30,7 +30,7 @@ function BannerSlide() {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div id="banner-carousel" className="relative w-full" data-carousel="slide">
