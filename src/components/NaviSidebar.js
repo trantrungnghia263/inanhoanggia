@@ -21,7 +21,7 @@ function NavSidebar() {
     },
     {
       title: "In lua - canvas",
-      link: "/danh-muc-in/in-canvas",
+      link: "/danh-muc-in/in-lua-canvas",
     },
     {
       title: "In decal PP",

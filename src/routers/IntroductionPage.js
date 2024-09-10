@@ -347,18 +347,18 @@ function IntroductionPage() {
                 tạo và đạt chuẩn chất lượng.
               </p>
             </div>
-            <div className="categories-detail__bottom pt-4 border-t">
-              <div className="categories-detail__tag">
-                <h4 className="categories-detail__tag-title text-lg text-emerald-700 uppercase">
+            <div className="introduction-page__bottom pt-4 border-t">
+              <div className="introduction-page__tag">
+                <h4 className="introduction-page__tag-title text-lg text-emerald-700 uppercase">
                   Danh mục liên quan
                 </h4>
-                <ul className="categories-detail__tag-list py-2 flex flex-wrap items-start lg:flex-nowrap lg:items-center gap-2">
+                <ul className="introduction-page__tag-list py-2 flex flex-wrap items-start lg:flex-nowrap lg:items-center gap-2">
                   <div className="text-base text-gray-700">Tags:</div>
                   {tags.map((tag, index) => (
-                    <li className="categories-detail__tag-item" key={index}>
+                    <li className="introduction-page__tag-item" key={index}>
                       <Link
                         to={tag.link}
-                        className="categories-detail__tag-link text-emerald-700 transition duration-300 hover:underline"
+                        className="introduction-page__tag-link text-emerald-700 transition duration-300 hover:underline"
                       >
                         {tag.title}
                       </Link>
@@ -366,10 +366,10 @@ function IntroductionPage() {
                   ))}
                 </ul>
               </div>
-              <div className="categories-detail__share pt-3 flex items-center gap-1">
+              <div className="introduction-page__share pt-3 flex items-center gap-1">
                 {socials.map((item, index) => (
                   <div
-                    className="categories-detail__icon p-2.5 bg-slate-100 transition duration-300 cursor-pointer hover:bg-slate-200"
+                    className="introduction-page__icon p-2.5 bg-slate-100 transition duration-300 cursor-pointer hover:bg-slate-200"
                     key={index}
                   >
                     {item.icon}

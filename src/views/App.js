@@ -18,6 +18,7 @@ import BlogDetail from "../routers/BlogDetail";
 import IntroductionPage from "../routers/IntroductionPage";
 import Contact from "../routers/Contact";
 import QuotationPage from "../routers/QuotationPage";
+import PolicyPage from "../routers/PolicyPage";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function AppContent() {
           <Route path="/gioi-thieu" element={<IntroductionPage />} />
           <Route path="/lien-he" element={<Contact />} />
           <Route path="/bao-gia" element={<QuotationPage />} />
+          <Route path="/chinh-sach/:slug" element={<PolicyPage />} />
         </Routes>
       </div>
       <Footer />

@@ -162,13 +162,25 @@ function Footer() {
     "In băng rôn",
   ];
 
-  const poplicies = [
-    "Điều khoản dịch vụ",
-    "Chính sách giao hàng",
-    "Chính sách xử lý khiếu nại",
-    "Chính sách thanh toán và vận chuyển, khiếu nại",
-    "Chính sách bảo mật thông tin",
-    "Chính sách đổi trả và hoàn tiền",
+  const policies = [
+    { title: "Điều khoản dịch vụ", link: "/chinh-sach/dieu-khoan-dich-vu" },
+    { title: "Chính sách giao hàng", link: "/chinh-sach/chinh-sach-giao-hang" },
+    {
+      title: "Chính sách xử lý khiếu nại",
+      link: "/chinh-sach/chinh-sach-xu-ly-khieu-nai",
+    },
+    {
+      title: "Chính sách thanh toán và vận chuyển khiếu nại",
+      link: "/chinh-sach/chinh-sach-thanh-toan-va-van-chuyen-khieu-nai",
+    },
+    {
+      title: "Chính sách bảo mật thông tin",
+      link: "/chinh-sach/chinh-sach-bao-mat-thong-tin",
+    },
+    {
+      title: "Chính sách đổi trả và hoàn tiền",
+      link: "/chinh-sach/chinh-sach-doi-tra-va-hoan-tien",
+    },
   ];
 
   const frame = `
@@ -313,10 +325,10 @@ function Footer() {
                 } md:max-h-screen`}
               >
                 <ul className="footer__list pt-5">
-                  {poplicies.map((item, index) => (
+                  {policies.map((item, index) => (
                     <li className="footer__item py-2" key={index}>
                       <Link
-                        to=""
+                        to={item.link}
                         className="footer__link flex items-center gap-1 text-base text-white uppercase"
                       >
                         <div className="flex items-center">
@@ -339,7 +351,7 @@ function Footer() {
                           </svg>
                         </div>
                         <p className="transiton duration-300 hover:ml-1 hover:opacity hover:opacity-80">
-                          {item}
+                          {item.title}
                         </p>
                       </Link>
                     </li>

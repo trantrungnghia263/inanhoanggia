@@ -13,7 +13,8 @@ import "./styles/banner-slide.scss";
 import "./styles/categories-page.scss";
 import "./styles/blog-page.scss";
 import "./styles/introduction-page.scss";
-import "./styles/service-quote.scss";
+import "./styles/policy-page.scss";
+import "./styles/quotation-page.scss";
 
 //AOS ANIMATION
 import "aos/dist/aos.css";
