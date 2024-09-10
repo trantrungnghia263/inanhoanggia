@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // IMAGE
 import logo from "../assets/logo/logo.png";
@@ -84,13 +85,13 @@ function MenuHamburger({ isOpen, setIsOpen }) {
                 key={index}
               >
                 <div className="flex justify-between items-center">
-                  <a
-                    href={item.link}
+                  <Link
+                    to={item.link}
                     className="menu-hamburger__link block text-base text-gray-500 font-semibold uppercase"
                     onClick={() => item.sub_menu && toggleSubMenu(index)}
                   >
                     {item.title}
-                  </a>
+                  </Link>
                   {item.sub_menu && (
                     <button
                       className="accordion-toggle ml-2 focus:outline-none"
@@ -128,12 +129,12 @@ function MenuHamburger({ isOpen, setIsOpen }) {
                         key={subIndex}
                         className="menu-hamburger__sub-item pb-2.5 first:pt-3"
                       >
-                        <a
-                          href={subItem.sub_link}
+                        <Link
+                          to={subItem.sub_link}
                           className="block text-sm text-gray-500 uppercase font-semibold"
                         >
                           {subItem.sub_title}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
