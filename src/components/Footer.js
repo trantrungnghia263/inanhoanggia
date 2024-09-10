@@ -154,12 +154,12 @@ function Footer() {
   ];
 
   const categories = [
-    "In bạt Hiflex",
-    "In lụa - canvas",
-    "In decal pp",
-    "In decal ô tô",
-    "In backlit",
-    "In băng rôn",
+    { title: "In bạt Hiflex", link: "/danh-muc-in/in-bat-hiflex" },
+    { title: "In lụa - canvas", link: "/danh-muc-in/in-lua-canvas" },
+    { title: "In decal pp", link: "/danh-muc-in/in-decal-pp" },
+    { title: "In decal ô tô", link: "/danh-muc-in/in-decal-o-to" },
+    { title: "In backlit", link: "/danh-muc-in/in-backlit" },
+    { title: "In băng rôn", link: "/danh-muc-in/in-bang-ron" },
   ];
 
   const policies = [
@@ -284,10 +284,10 @@ function Footer() {
                       key={index}
                     >
                       <Link
-                        to="/"
+                        to={item.link}
                         className="footer__link text-base text-white uppercase"
                       >
-                        {item}
+                        {item.title}
                       </Link>
                     </li>
                   ))}
