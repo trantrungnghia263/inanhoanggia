@@ -1,8 +1,6 @@
 import React from "react";
 
 //COMPONENT
-import Share from "../components/Share";
-import BackToTop from "../components/BackToTop";
 import ContactForm from "../components/ContactForm";
 
 function Contact() {
@@ -144,10 +142,6 @@ function Contact() {
           </div>
         </div>
       </div>
-      {/* sharing  */}
-      <Share></Share>
-      {/* back to top */}
-      <BackToTop />
     </div>
   );
 }

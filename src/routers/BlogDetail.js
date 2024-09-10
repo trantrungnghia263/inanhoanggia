@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 //FUNCTION
-import Share from "../components/Share";
-import BackToTop from "../components/BackToTop";
 import { createSlug } from "../util/createSlug";
 
 function BlogDetail() {
@@ -34,10 +32,6 @@ function BlogDetail() {
         <p>{blog.description}</p>
         <p>{blog.date}</p>
       </div>
-      {/* sharing  */}
-      <Share></Share>
-      {/* back to top */}
-      <BackToTop />
     </div>
   );
 }

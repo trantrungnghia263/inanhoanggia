@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 
 //COMPONENTS
-import Share from "../components/Share";
-import BackToTop from "../components/BackToTop";
 import BannerSlide from "../components/BannerSlide";
 import MultiColumn from "../components/MultiColumn";
 import HeadingSection from "../components/HeadingSection";
@@ -82,10 +80,6 @@ function HomePage() {
         </div>
         <BlogPost />
       </div>
-      {/* sharing  */}
-      <Share></Share>
-      {/* back to top */}
-      <BackToTop />
     </div>
   );
 }

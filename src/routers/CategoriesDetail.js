@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 // COMPONENT
-import Share from "../components/Share";
-import BackToTop from "../components/BackToTop";
 import NavSidebar from "../components/NaviSidebar";
 import BlogSidebar from "../components/BlogSidebar";
 
@@ -240,10 +238,6 @@ function CategoriesDetail() {
           </div>
         </div>
       </div>
-      {/* sharing  */}
-      <Share></Share>
-      {/* back to top */}
-      <BackToTop />
     </div>
   );
 }

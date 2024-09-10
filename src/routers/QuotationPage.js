@@ -1,8 +1,6 @@
 import React from "react";
 
 // COMPONENT
-import Share from "../components/Share";
-import BackToTop from "../components/BackToTop";
 import NavSidebar from "../components/NaviSidebar";
 import BlogSidebar from "../components/BlogSidebar";
 import PageEmpty from "../components/PageEmpty";
@@ -44,7 +42,7 @@ function QuotationPage() {
             <div className="pt-4">
               <PageEmpty title="Trang báo giá hiện đang được cập nhật..." />
             </div>
-            <div className="quotation-page__animate pt-6 md:pt-8 lg:pt-0 w-60 md:w-full flex items-center justify-center lg:absolute lg:left-1/2 lg:top-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2">
+            <div className="quotation-page__animate pt-6 md:pt-8 lg:pt-0 w-full flex items-center justify-center lg:absolute lg:left-1/2 lg:top-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2">
               <Lottie
                 animationData={ani}
                 loop={true}
@@ -54,10 +52,6 @@ function QuotationPage() {
           </div>
         </div>
       </div>
-      {/* sharing  */}
-      <Share></Share>
-      {/* back to top */}
-      <BackToTop />
     </div>
   );
 }

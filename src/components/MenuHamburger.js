@@ -81,13 +81,18 @@ function MenuHamburger({ isOpen, setIsOpen }) {
             {menus.map((item, index) => (
               <li
                 id={item.title}
-                className="menu-hamburger__item py-2.5 border-t last:border-b"
+                className="menu-hamburger__item border-t last:border-b"
                 key={index}
+                onClick={() => {
+                  if (!item.sub_menu) {
+                    setIsOpen(false);
+                  }
+                }}
               >
                 <div className="flex justify-between items-center">
                   <Link
                     to={item.link}
-                    className="menu-hamburger__link block text-base text-gray-500 font-semibold uppercase"
+                    className="menu-hamburger__link block py-2.5 text-base text-gray-500 font-semibold uppercase"
                     onClick={() => item.sub_menu && toggleSubMenu(index)}
                   >
                     {item.title}
@@ -98,7 +103,7 @@ function MenuHamburger({ isOpen, setIsOpen }) {
                       onClick={() => toggleSubMenu(index)}
                     >
                       <svg
-                        className={`w-4 h-4 transition-transform font-semibold ${
+                        className={`w-4 h-4 transition-transform duration-300 font-semibold ${
                           activeIndex === index ? "rotate-180" : ""
                         }`}
                         fill="none"
@@ -127,11 +132,12 @@ function MenuHamburger({ isOpen, setIsOpen }) {
                     {item.sub_menu.map((subItem, subIndex) => (
                       <li
                         key={subIndex}
-                        className="menu-hamburger__sub-item pb-2.5 first:pt-3"
+                        className="menu-hamburger__sub-item first:pt-3"
+                        onClick={() => setIsOpen(false)}
                       >
                         <Link
                           to={subItem.sub_link}
-                          className="block text-sm text-gray-500 uppercase font-semibold"
+                          className="block pb-2.5 text-sm text-gray-500 uppercase font-semibold"
                         >
                           {subItem.sub_title}
                         </Link>

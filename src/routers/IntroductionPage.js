@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 //COMPONENTS
-import Share from "../components/Share";
-import BackToTop from "../components/BackToTop";
 import NavSidebar from "../components/NaviSidebar";
 import BlogSidebar from "../components/BlogSidebar";
 import HeadingSection from "../components/HeadingSection";
@@ -382,10 +380,6 @@ function IntroductionPage() {
           </div>
         </div>
       </div>
-      {/* sharing  */}
-      <Share></Share>
-      {/* back to top */}
-      <BackToTop />
     </div>
   );
 }

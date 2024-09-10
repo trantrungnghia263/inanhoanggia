@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 // COMPONENTS
-import Share from "../components/Share";
-import BackToTop from "../components/BackToTop";
 import NavSidebar from "../components/NaviSidebar";
 import BlogCard from "../components/BlogCard";
 import ItemCard from "../components/ItemCard";
@@ -207,10 +205,6 @@ function BlogPage() {
           </div>
         </div>
       </div>
-      {/* sharing  */}
-      <Share></Share>
-      {/* back to top */}
-      <BackToTop />
     </div>
   );
 }
