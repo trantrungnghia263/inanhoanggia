@@ -10,6 +10,9 @@ import HeadingSection from "../components/HeadingSection";
 // FUNCTIONS
 import { createSlug } from "../util/createSlug";
 
+//HOOKS
+import useDocumentTitle from "../hooks/useDocumentTitle";
+
 // SWIPER
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,6 +27,7 @@ import "swiper/css/scrollbar";
 import AOS from "aos";
 
 function BlogPage() {
+  useDocumentTitle("Tin tức - Công ty in Hoàng Gia");
   const [blogs, setBlogs] = useState([]);
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();

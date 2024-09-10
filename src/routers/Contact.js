@@ -3,7 +3,12 @@ import React from "react";
 //COMPONENT
 import ContactForm from "../components/ContactForm";
 
+//HOOKS
+import useDocumentTitle from "../hooks/useDocumentTitle";
+
 function Contact() {
+  useDocumentTitle("Liên hệ - Công ty in Hoàng Gia");
+
   const infoArr = [
     {
       id: 1,

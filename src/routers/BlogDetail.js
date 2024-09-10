@@ -4,8 +4,11 @@ import { useParams } from "react-router-dom";
 //FUNCTION
 import { createSlug } from "../util/createSlug";
 
+//HOOKS
+import useDocumentTitle from "../hooks/useDocumentTitle";
+
 function BlogDetail() {
-  const { slug } = useParams(); // Lấy slug từ URL
+  const { slug } = useParams();
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
@@ -19,6 +22,10 @@ function BlogDetail() {
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, [slug]);
+
+  // Set page title based on category.title
+  const pageTitle = blog ? blog.title : "Page not found";
+  useDocumentTitle(pageTitle);
 
   if (!blog) {
     return <div>Loading...</div>;

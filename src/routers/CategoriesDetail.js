@@ -8,9 +8,14 @@ import BlogSidebar from "../components/BlogSidebar";
 // FUNCTION
 import { createSlug } from "../util/createSlug";
 
+//HOOKS
+import useDocumentTitle from "../hooks/useDocumentTitle";
+
 function CategoriesDetail() {
   const { slug } = useParams();
+
   const [category, setCategory] = useState(null);
+
   const tags = [
     {
       title: "In decal PP,",
@@ -37,6 +42,7 @@ function CategoriesDetail() {
       link: "/danh-muc-in/in-bat-hiflex",
     },
   ];
+
   const socials = [
     {
       title: "Facebook",
@@ -158,6 +164,10 @@ function CategoriesDetail() {
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, [slug]);
+
+  // Set page title based on category.title
+  const pageTitle = category ? category.title : "Page not found";
+  useDocumentTitle(pageTitle);
 
   return (
     <div className="categories-detail relative pt-4 pb-10 md:pt-6 lg:py-10">

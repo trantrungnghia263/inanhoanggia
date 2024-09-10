@@ -7,10 +7,15 @@ import BlogPost from "../components/BlogPost";
 import ItemCard from "../components/ItemCard";
 import HeadingSection from "../components/HeadingSection";
 
+//HOOKS
+import useDocumentTitle from "../hooks/useDocumentTitle";
+
 //FUNCTION
 import { createSlug } from "../util/createSlug";
 
 function CategoriesPage() {
+  useDocumentTitle("Danh mục in - Công ty in Hoàng Gia");
+
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 

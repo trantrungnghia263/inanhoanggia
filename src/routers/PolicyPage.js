@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 
 //COMPONENTS
@@ -6,6 +6,9 @@ import NavSidebar from "../components/NaviSidebar";
 import BlogSidebar from "../components/BlogSidebar";
 import HeadingSection from "../components/HeadingSection";
 import MultiColumn from "../components/MultiColumn";
+
+//HOOKS
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 // FUNCTION
 import { createSlug } from "../util/createSlug";
@@ -152,10 +155,11 @@ function PolicyPage() {
     },
   ];
 
-  const policies = [
-    {
-      title: "Điều khoản dịch vụ",
-      content: `<div class="policy-page__box">
+  const policies = useMemo(
+    () => [
+      {
+        title: "Điều khoản dịch vụ",
+        content: `<div class="policy-page__box">
       <h6 class="policy-page__title text-base text-emerald-700 uppercase py-3">
         1.Giới thiệu dịch vụ
       </h6>
@@ -208,10 +212,10 @@ function PolicyPage() {
         tôi.
       </p>
     </div>`,
-    },
-    {
-      title: "Chính sách giao hàng",
-      content: `<div class="policy-page__box">
+      },
+      {
+        title: "Chính sách giao hàng",
+        content: `<div class="policy-page__box">
       <h6 class="policy-page__title text-base text-emerald-700 uppercase py-3">
         1.Với khách hàng trong nội thành Hà Nội
       </h6>
@@ -242,10 +246,10 @@ function PolicyPage() {
       Trường hợp gửi bưu điện, phần tiền còn lại sẽ được thanh toán khi khách hàng nhận hàng. Với trường hợp gửi xe khách không có dịch vụ thu hộ, khách hàng vui lòng thanh toán trước khi chúng tôi gửi hàng. Trường hợp này chúng tôi sẽ gửi mẫu hàng đã sản xuất hoặc gửi clip chi tiết để khách hàng nghiệm thu.
       </p>
     </div>`,
-    },
-    {
-      title: "Chính sách đổi trả và hoàn tiền",
-      content: `<div class="policy-page__box">
+      },
+      {
+        title: "Chính sách đổi trả và hoàn tiền",
+        content: `<div class="policy-page__box">
       <h6 class="policy-page__title text-base text-emerald-700 uppercase py-3">
         1.Trường hợp được đổi trả hàng
       </h6>
@@ -279,10 +283,10 @@ function PolicyPage() {
       – Quý khách chịu chi phí vận chuyển, đóng gói, thu hộ tiền, chi phí liên lạc tối đa tương đương 20% giá trị đơn hàng
       </p>
     </div>`,
-    },
-    {
-      title: "Chính sách bảo mật thông tin",
-      content: `<div class="policy-page__box">
+      },
+      {
+        title: "Chính sách bảo mật thông tin",
+        content: `<div class="policy-page__box">
       <h6 class="policy-page__title text-base text-emerald-700 uppercase py-3">
         1.Mục đích và phạm vi thu thập thông tin
       </h6>
@@ -380,8 +384,10 @@ function PolicyPage() {
       <span class="text-emerald-600 italic">inanhoanggia.vn</span> hiểu rằng quyền lợi của bạn trong việc bảo vệ thông tin cá nhân cũng chính là trách nhiệm của chúng tôi nên trong bất kỳ trường hợp có thắc mắc, góp ý nào liên quan đến chính sách bảo mật của <span class="text-emerald-600 italic">inanhoanggia.vn</span> , và liên quan đến việc thông tin cá nhân bị sử dụng sai mục đích hoặc phạm vi đã thông báo vui lòng liên hệ qua số hotline 0756.38.4567 hoặc email: <span class="text-emerald-600 italic">inanhoanggia.ht.85@gmail.com</span>
       </p>
     </div>`,
-    },
-  ];
+      },
+    ],
+    []
+  );
 
   const { slug } = useParams();
   const [policyContent, setPolicyContent] = useState(null);
@@ -392,10 +398,10 @@ function PolicyPage() {
       setPolicyContent(policy.content);
     } else {
       setPolicyContent(
-        `<p class="text-base text-gray-600 pb-4" >Không tìm thấy chính sách này.</p>`
+        `<p class="text-base text-gray-600 pb-4">Không tìm thấy chính sách này.</p>`
       );
     }
-  }, [slug]);
+  }, [slug, policies]);
 
   // Tìm chính sách dựa trên slug
   const currentPolicy = policies.find(
@@ -404,6 +410,8 @@ function PolicyPage() {
 
   // Nếu không tìm thấy chính sách, hiển thị "Page not found"
   const pageTitle = currentPolicy ? currentPolicy.title : "Page not found";
+
+  useDocumentTitle(pageTitle);
 
   return (
     <div className="policy-page pt-4 pb-10 md:pt-6 lg:py-10">
