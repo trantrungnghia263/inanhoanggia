@@ -45,7 +45,7 @@ function CategoriesDetail() {
       link: "https://www.facebook.com/Inmau-112848952386864/",
       icon: (
         <svg
-          class="w-6 h-6 text-blue-700 dark:text-white"
+          class="w-6 h-6 text-blue-700 dark:text-blue-700"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -66,7 +66,7 @@ function CategoriesDetail() {
       link: "https://www.facebook.com/Inmau-112848952386864/",
       icon: (
         <svg
-          class="w-6 h-6 text-cyan-500 dark:text-white"
+          class="w-6 h-6 text-cyan-500 dark:text-cyan-500"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -87,7 +87,7 @@ function CategoriesDetail() {
       link: "https://www.facebook.com/Inmau-112848952386864/",
       icon: (
         <svg
-          class="w-6 h-6 text-rose-500 dark:text-white"
+          class="w-6 h-6 text-rose-500 dark:text-rose-500"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -109,7 +109,7 @@ function CategoriesDetail() {
       link: "https://www.facebook.com/Inmau-112848952386864/",
       icon: (
         <svg
-          class="w-6 h-6 text-neutral-500 dark:text-white"
+          class="w-6 h-6 text-neutral-500 dark:text-neutral-500"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -130,7 +130,7 @@ function CategoriesDetail() {
       link: "https://www.facebook.com/Inmau-112848952386864/",
       icon: (
         <svg
-          class="w-6 h-6 text-sky-600 dark:text-white"
+          class="w-6 h-6 text-sky-600 dark:text-sky-600"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
