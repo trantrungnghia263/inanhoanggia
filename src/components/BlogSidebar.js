@@ -26,12 +26,12 @@ function BlogSidebar() {
         <p>Tin tức mới</p>
       </div>
       <div className="blog-sidebar__wrapper px-4 py-3 bg-slate-50">
-        {blogs.map((blog) => (
+        {blogs.slice(0, 4).map((blog) => (
           <div
             className="blog-sidebar__item group py-3 last:pb-0 first:pt-0 flex items-center border-b last:border-b-0 gap-2 transition duration-300 hover:bg-slate-100 hover:cursor-pointer"
             onClick={() => handleBlogClick(blog.title)}
           >
-            <div className="blog-sidebar__image flex items-center justify-center w-32 h-16 overflow-hidden">
+            <div className="blog-sidebar__image flex items-center justify-center shrink-0 w-16 h-16 overflow-hidden">
               <img
                 src={blog.image}
                 alt={blog.title}
