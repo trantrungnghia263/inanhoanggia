@@ -38,7 +38,7 @@ const AutoScrollImage = ({ imageSrc, title }) => {
       >
         <img src={imageSrc} alt="Auto Scrolling" />
       </div>
-      <div className="auto-scroll-image__title text-base text-gray-800 text-center uppercase pt-3">
+      <div className="auto-scroll-image__title pt-3 text-base text-gray-800 text-center uppercase font-semibold">
         {title}
       </div>
     </div>

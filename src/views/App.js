@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 //components
@@ -19,6 +19,7 @@ import IntroductionPage from "../routers/IntroductionPage";
 import Contact from "../routers/Contact";
 import QuotationPage from "../routers/QuotationPage";
 import PolicyPage from "../routers/PolicyPage";
+import SearchResultsPage from "../routers/SearchResultsPage";
 
 function App() {
   return (
@@ -29,10 +30,15 @@ function App() {
 }
 
 function AppContent() {
+  const navigate = useNavigate();
+  const handleSearch = (query) => {
+    navigate(`/tim-kiem?q=${encodeURIComponent(query)}`);
+  };
+
   return (
     <div className="App">
       <ScrollToTop />
-      <Header />
+      <Header onSearch={handleSearch} />
       <div className="content">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -44,6 +50,7 @@ function AppContent() {
           <Route path="/lien-he" element={<Contact />} />
           <Route path="/bao-gia" element={<QuotationPage />} />
           <Route path="/chinh-sach/:slug" element={<PolicyPage />} />
+          <Route path="/tim-kiem" element={<SearchResultsPage />} />
         </Routes>
       </div>
       <Footer />

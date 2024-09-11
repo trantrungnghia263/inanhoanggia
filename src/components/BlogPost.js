@@ -34,7 +34,7 @@ function BlogPost() {
     <div className="blog-post py-8">
       <div className="container">
         <div className="blog-post__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {blogs.map((blog, index) => (
+          {blogs.slice(0, 3).map((blog, index) => (
             <div
               className="blog-card__item"
               key={blog.id}

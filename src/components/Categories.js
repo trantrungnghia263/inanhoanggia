@@ -37,7 +37,7 @@ function Categories() {
           {categories && categories.length > 0 ? (
             categories.map((item, index) => (
               <div
-                className="categories__item"
+                className="categories__item cursor-pointer"
                 key={index}
                 onClick={() => handleCategoriesClick(item.title)}
                 data-aos="fade-up"

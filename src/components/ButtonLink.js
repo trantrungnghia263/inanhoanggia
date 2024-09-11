@@ -7,6 +7,7 @@ function ButtonLink({ link, text, alignment }) {
       <Link
         to={link}
         className={`btn-link__link flex items-center justify-${alignment} gap-1 text-base text-emerald-700 transition duration-300 hover:underline`}
+        aria-label={text}
       >
         <div className="btn-link__text">
           <p>{text}</p>

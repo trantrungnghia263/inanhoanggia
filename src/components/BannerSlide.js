@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSwipeable } from "react-swipeable";
 
 //IMAGES
 import banner1 from "../assets/banner/banner1.jpg";
@@ -24,6 +25,14 @@ function BannerSlide() {
     setActiveIndex(index);
   };
 
+  // Swipe handlers
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleNextClick(),
+    onSwipedRight: () => handlePrevClick(),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
+
   // Auto-slide effect (optional)
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,7 +42,12 @@ function BannerSlide() {
   }, [images.length]);
 
   return (
-    <div id="banner-carousel" className="relative w-full" data-carousel="slide">
+    <div
+      id="banner-carousel"
+      className="relative w-full"
+      data-carousel="slide"
+      {...handlers}
+    >
       <div className="banner-carousel__content relative overflow-hidden rounded-lg">
         {images.map((image, index) => (
           <div
@@ -74,7 +88,7 @@ function BannerSlide() {
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
           <svg
-            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            className="w-4 h-4 text-white dark:text-white rtl:rotate-180"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -99,7 +113,7 @@ function BannerSlide() {
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
           <svg
-            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            className="w-4 h-4 text-white dark:text-white rtl:rotate-180"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

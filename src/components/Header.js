@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-//COMPONENTS
+// COMPONENTS
 import Nav from "./Nav";
 import MenuHamburger from "./MenuHamburger";
 
 // IMAGE
 import logo from "../assets/logo/logo.png";
 
-function Header() {
+function Header({ onSearch }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const location = useLocation();
+
+  // Clear search query when location changes
+  useEffect(() => {
+    setSearchQuery("");
+  }, [location]);
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim() !== "") {
+      onSearch(searchQuery);
+    }
+  };
 
   return (
     <div className="header sticky top-0 z-50 bg-white border-b">
@@ -69,15 +88,24 @@ function Header() {
                 </a>
               </li>
             </ul>
-            <div className="header__search flex rounded-3xl ps-4 pe-6 bg-white w-96 border border-emerald-700 text-emerald-700">
+            <form
+              onSubmit={handleSearchSubmit}
+              className="header__search flex rounded-3xl ps-4 pe-6 bg-white w-96 border border-emerald-700 text-emerald-700"
+            >
               <input
+                className="w-full bg-transparent border-none px-4 py-2.5 ps-0 outline-none text-emerald-700 placeholder-green-700"
                 type="search"
                 name="search"
                 id="search"
                 placeholder="Tìm kiếm sản phẩm mẫu thiết kế ..."
-                className="w-full bg-transparent border-none px-4 py-2.5 ps-0 outline-none text-emerald-700 placeholder-green-700"
+                value={searchQuery}
+                onChange={handleSearchChange}
               />
-              <button className="header__btn-search" aria-label="Search">
+              <button
+                className="header__btn-search"
+                aria-label="Search"
+                type="submit"
+              >
                 <svg
                   className="w-4 h-4 text-gray-500 dark:text-gray-400 text-emerald-700"
                   aria-hidden="true"
@@ -94,7 +122,7 @@ function Header() {
                   />
                 </svg>
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -112,7 +140,7 @@ function Header() {
               onClick={() => setIsOpen(true)}
             >
               <svg
-                class="w-6 h-6 text-gray-500 dark:text-gray-500"
+                className="w-6 h-6 text-gray-500 dark:text-gray-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

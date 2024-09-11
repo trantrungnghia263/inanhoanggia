@@ -1,13 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-//componen
+//cCOMPONENT
 import ButtonLink from "./ButtonLink";
 
 function BlogCard({ image, link, title, description, date }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(link);
+  };
+
   return (
     <div className="blog-card group hover:cursor-pointer">
-      <Link to={link} className="blog-card__link block">
+      <div className="blog-card__link" onClick={handleCardClick}>
         <div className="blog-card__head relative">
           <div className="blog-card__image overflow-hidden">
             <img
@@ -25,14 +31,14 @@ function BlogCard({ image, link, title, description, date }) {
           <div className="blog-card__title text-sm lg:text-base text-gray-800 text-center">
             {title}
           </div>
-          <div className="blog-card__description pt-1 text-sm text-gray-500 text-center">
+          <div className="blog-card__description pt-1 text-sm text-gray-500 text-center line-clamp-3">
             <p>{description}</p>
           </div>
           <div className="blog-post__link">
             <ButtonLink text="Xem thêm" link={link} alignment="center" />
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }
