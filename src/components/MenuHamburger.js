@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // IMAGE
 import logo from "../assets/logo/logo.png";
 
 function MenuHamburger({ isOpen, setIsOpen }) {
-  const [activeIndex, setActiveIndex] = useState(null); // State to track the active accordion
+  const location = useLocation();
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const menus = [
     { title: "Trang chủ", link: "/" },
@@ -31,7 +32,7 @@ function MenuHamburger({ isOpen, setIsOpen }) {
   ];
 
   const toggleSubMenu = (index) => {
-    setActiveIndex(activeIndex === index ? null : index); // Toggle submenu visibility
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
@@ -55,11 +56,11 @@ function MenuHamburger({ isOpen, setIsOpen }) {
               <img src={logo} alt="Logo" className="h-10" />
             </div>
             <div
-              className="menu-hamburger__close flex items-center justify-center"
+              className="menu-hamburger__close w-7 h-7 border flex items-center justify-center"
               onClick={() => setIsOpen(false)}
             >
               <svg
-                className="w-6 h-6 text-gray-500 dark:text-gray-500"
+                className="w-4 h-4 text-gray-500 dark:text-gray-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -92,7 +93,11 @@ function MenuHamburger({ isOpen, setIsOpen }) {
                 <div className="flex justify-between items-center">
                   <Link
                     to={item.link}
-                    className="menu-hamburger__link block py-2.5 text-base text-gray-500 font-semibold uppercase"
+                    className={`menu-hamburger__link block py-2.5 text-base font-semibold uppercase ${
+                      location.pathname === item.link
+                        ? "text-emerald-700"
+                        : "text-gray-500"
+                    }`}
                     onClick={() => item.sub_menu && toggleSubMenu(index)}
                   >
                     {item.title}
@@ -132,7 +137,7 @@ function MenuHamburger({ isOpen, setIsOpen }) {
                     {item.sub_menu.map((subItem, subIndex) => (
                       <li
                         key={subIndex}
-                        className="menu-hamburger__sub-item first:pt-3"
+                        className="menu-hamburger__sub-item first:pt-1 last:pb-1"
                         onClick={() => setIsOpen(false)}
                       >
                         <Link

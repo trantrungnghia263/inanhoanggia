@@ -90,10 +90,10 @@ function Header({ onSearch }) {
             </ul>
             <form
               onSubmit={handleSearchSubmit}
-              className="header__search flex rounded-3xl ps-4 pe-6 bg-white w-96 border border-emerald-700 text-emerald-700"
+              className="header__search flex items-center rounded-3xl ps-4 pe-2 bg-white w-96 border border-emerald-700 text-emerald-700"
             >
               <input
-                className="w-full bg-transparent border-none px-4 py-2.5 ps-0 outline-none text-emerald-700 placeholder-green-700"
+                className="w-full bg-transparent border-none px-4 py-2.5 ps-0 text-emerald-700 placeholder-green-700 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500"
                 type="search"
                 name="search"
                 id="search"
@@ -102,12 +102,12 @@ function Header({ onSearch }) {
                 onChange={handleSearchChange}
               />
               <button
-                className="header__btn-search"
+                className="header__btn-search group w-9 h-8 flex items-center justify-center rounded-full transition duration-300 hover:bg-emerald-700 hover:text-white hover:dark:text-white"
                 aria-label="Search"
                 type="submit"
               >
                 <svg
-                  className="w-4 h-4 text-gray-500 dark:text-gray-400 text-emerald-700"
+                  className="w-4 h-4 dark:text-emerald-700 text-emerald-700 transition duration-300 group-hover:text-white group-hover:dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -136,7 +136,7 @@ function Header({ onSearch }) {
               <img src={logo} alt="Logo" className="h-10" />
             </div>
             <div
-              className="header__toggle flex items-center justify-center"
+              className="header__toggle w-7 h-7 border flex items-center justify-center"
               onClick={() => setIsOpen(true)}
             >
               <svg

@@ -119,9 +119,9 @@ function Contact() {
               CÔNG TY IN HOÀNG GIA
             </h3>
             <p className="text-base text-gray-500 pt-3">
-              In Thủ Đô là một địa chỉ công ty in uy tín tại Hà Nội. Chúng tôi
-              luôn cung cấp dịch vụ in ấn chất lượng, đáng tin cậy với giá cả
-              cạnh tranh. Liên hệ ngay hôm nay để được tư vấn và nhận báo giá
+              In Hoàng Gia là một địa chỉ công ty in uy tín tại Hà Nội. Chúng
+              tôi luôn cung cấp dịch vụ in ấn chất lượng, đáng tin cậy với giá
+              cả cạnh tranh. Liên hệ ngay hôm nay để được tư vấn và nhận báo giá
               tốt nhất!
             </p>
             <ul className="contact__list pt-4">
