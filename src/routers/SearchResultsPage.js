@@ -144,7 +144,6 @@ function SearchResultsPage() {
                 key={blog.id}
                 onClick={() => handleBlogClick(blog.title)}
                 data-aos="fade-up"
-                data-aos-delay={`${index}00`}
               >
                 <BlogCard
                   title={blog.title}
@@ -160,7 +159,6 @@ function SearchResultsPage() {
                 key={category.id}
                 onClick={() => handleCategoriesClick(category.title)}
                 data-aos="fade-up"
-                data-aos-delay={`${index}00`}
               >
                 <ItemCard
                   image={category.imageUrl}
