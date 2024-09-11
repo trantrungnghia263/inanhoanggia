@@ -13,7 +13,7 @@ function NavSidebar() {
     },
     {
       title: "In decal ôtô",
-      link: "/danh-muc-in/in-decal-oto",
+      link: "/danh-muc-in/in-decal-o-to",
     },
     {
       title: "In băng rôn",
