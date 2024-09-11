@@ -121,7 +121,7 @@ function ContactForm() {
             type="text"
             name="from_name"
             id="fullname"
-            className="border rounded w-full py-3 px-3 text-gray-700 border-2 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-700 focus:border-blue-700"
+            className="border rounded w-full py-3 px-3 text-gray-700 border-2 leading-tight focus:outline-none focus:shadow-outline focus:ring-emerald-700 focus:border-emerald-700"
             placeholder="Your Name"
             required
           />
@@ -137,7 +137,7 @@ function ContactForm() {
             type="email"
             name="from_email"
             id="email"
-            className="border rounded w-full py-3 px-3 text-gray-700 border-2 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-700 focus:border-blue-500"
+            className="border rounded w-full py-3 px-3 text-gray-700 border-2 leading-tight focus:outline-none focus:shadow-outline focus:ring-emerald-700 focus:border-emerald-700"
             placeholder="name@flowbite.com"
             required
           />
@@ -153,7 +153,7 @@ function ContactForm() {
             type="tel"
             name="from_phone"
             id="phone"
-            className="border rounded w-full py-3 px-3 text-gray-700 border-2 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-700 focus:border-blue-500"
+            className="border rounded w-full py-3 px-3 text-gray-700 border-2 leading-tight focus:outline-none focus:shadow-outline focus:ring-emerald-700 focus:border-emerald-700"
             placeholder="+84 123.456.789"
             required
           />
@@ -168,7 +168,7 @@ function ContactForm() {
           name="message"
           id="message"
           rows="4"
-          className="border rounded w-full py-3 px-3 text-gray-700 border-2 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-700 focus:border-blue-500"
+          className="border rounded w-full py-3 px-3 text-gray-700 border-2 leading-tight focus:outline-none focus:shadow-outline focus:ring-emerald-700 focus:border-emerald-700"
           placeholder="Leave a comment..."
           required
         ></textarea>
