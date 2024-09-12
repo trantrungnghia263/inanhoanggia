@@ -61,14 +61,14 @@ function Nav() {
       <ul className="nav__list flex">
         {listNav.map((item, index) => (
           <li
-            className={`nav__item px-4 py-4 group relative transition duration-150 hover:bg-emerald-700 ${
+            className={`nav__item group relative transition duration-150 hover:bg-emerald-700 ${
               location.pathname === item.link ? "bg-emerald-700" : ""
             }`}
             key={index}
           >
             <Link
               to={item.link}
-              className="nav__link text-base uppercase text-white flex items-center gap-2"
+              className="nav__link text-base uppercase text-white flex items-center gap-2 px-4 py-4"
             >
               <p> {item.title}</p>
               {item.sub_menu ? (
@@ -95,17 +95,17 @@ function Nav() {
                 ""
               )}
               {item.sub_menu && (
-                <ul className="nav__sub-menu w-full absolute top-full left-0 z-10 opacity-0 translate-y-20 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                <ul className="nav__sub-menu w-full absolute top-full left-0 z-10 opacity-0 translate-y-10 pointer-events-none transition duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
                   {item.sub_menu.map((sub, index) => (
                     <li
-                      className={`nav__item px-4 py-2 transition duration-150 bg-emerald-700 hover:bg-emerald-800 ${
+                      className={`nav__item transition duration-150 bg-emerald-700 hover:bg-emerald-800 ${
                         location.pathname === item.link ? "bg-emerald-800" : ""
                       }`}
                       key={index}
                     >
                       <Link
                         to={sub.link}
-                        className="nav__link text-sm uppercase text-white"
+                        className="nav__link block text-sm uppercase text-white px-4 py-2"
                       >
                         {sub.title}
                       </Link>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // COMPONENTS
 import Nav from "./Nav";
@@ -34,9 +34,9 @@ function Header({ onSearch }) {
       <div className="header__top py-3 hidden lg:block">
         <div className="container">
           <div className="flex justify-between items-center">
-            <div className="header__logo">
+            <Link to="/" className="header__logo">
               <img src={logo} alt="" className="h-16" />
-            </div>
+            </Link>
             <ul className="header__info hidden gap-2.5 items-center xl:flex">
               <li className="flex items-center gap-1 text-base text-emerald-700 font-semibold">
                 <svg
@@ -132,9 +132,12 @@ function Header({ onSearch }) {
             <Nav />
           </div>
           <div className="flex items-center justify-between lg:hidden">
-            <div className="header__logo flex items-center justify-center">
+            <Link
+              to="/"
+              className="header__logo flex items-center justify-center"
+            >
               <img src={logo} alt="Logo" className="h-10" />
-            </div>
+            </Link>
             <div
               className="header__toggle w-7 h-7 border flex items-center justify-center"
               onClick={() => setIsOpen(true)}

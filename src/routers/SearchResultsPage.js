@@ -8,6 +8,10 @@ import ItemCard from "../components/ItemCard";
 //FUNCTION
 import { createSlug } from "../util/createSlug";
 
+//ANIMATION
+import empty from "../assets/gif/empty.json";
+import Lottie from "lottie-react";
+
 const categories = [
   {
     id: 1,
@@ -143,7 +147,6 @@ function SearchResultsPage() {
                 className="blog-card__item"
                 key={blog.id}
                 onClick={() => handleBlogClick(blog.title)}
-                data-aos="fade-up"
               >
                 <BlogCard
                   title={blog.title}
@@ -158,7 +161,6 @@ function SearchResultsPage() {
                 className="blog-card__item"
                 key={category.id}
                 onClick={() => handleCategoriesClick(category.title)}
-                data-aos="fade-up"
               >
                 <ItemCard
                   image={category.imageUrl}
@@ -171,6 +173,13 @@ function SearchResultsPage() {
         ) : (
           <div className="search-results-page__result-text text-base text-gray-500 pt-3">
             <p>Không tìm thấy kết quả nào.</p>
+            <div className="quotation-page__animate py-6 md:py-8w-full flex items-center justify-center">
+              <Lottie
+                animationData={empty}
+                loop={true}
+                className="w-48 md:w-64"
+              />
+            </div>
           </div>
         )}
       </div>

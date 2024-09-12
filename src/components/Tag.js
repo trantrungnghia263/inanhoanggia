@@ -29,10 +29,14 @@ function Tag() {
     },
   ];
 
+  const currentUrl = "https://inanhoanggia.vn";
+
   const socials = [
     {
       title: "Facebook",
-      link: "https://www.facebook.com/Inmau-112848952386864/",
+      link: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+        currentUrl
+      )}`,
       icon: (
         <svg
           class="w-6 h-6 text-blue-700 dark:text-blue-700"
@@ -53,7 +57,9 @@ function Tag() {
     },
     {
       title: "Twitter",
-      link: "https://www.facebook.com/Inmau-112848952386864/",
+      link: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+        currentUrl
+      )}`,
       icon: (
         <svg
           class="w-6 h-6 text-cyan-500 dark:text-cyan-500"
@@ -74,7 +80,7 @@ function Tag() {
     },
     {
       title: "Instagram",
-      link: "https://www.facebook.com/Inmau-112848952386864/",
+      link: `https://www.instagram.com/?url=${encodeURIComponent(currentUrl)}`,
       icon: (
         <svg
           class="w-6 h-6 text-rose-500 dark:text-rose-500"
@@ -139,6 +145,10 @@ function Tag() {
     },
   ];
 
+  const handleSocialClick = (link) => {
+    window.open(link, "_blank");
+  };
+
   return (
     <div className="tag">
       <div className="tag__tag">
@@ -166,6 +176,7 @@ function Tag() {
           <div
             className="tag__icon p-2.5 bg-slate-100 transition duration-300 cursor-pointer hover:bg-slate-200"
             key={index}
+            onClick={() => handleSocialClick(item.link)}
           >
             {item.icon}
           </div>

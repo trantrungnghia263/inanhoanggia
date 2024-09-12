@@ -52,9 +52,9 @@ function MenuHamburger({ isOpen, setIsOpen }) {
       >
         <div className="menu-hamburger__content px-4">
           <div className="menu-hamburger__head flex items-center justify-between py-4">
-            <div className="menu-hamburger__logo">
+            <Link to="/" className="menu-hamburger__logo block">
               <img src={logo} alt="Logo" className="h-10" />
-            </div>
+            </Link>
             <div
               className="menu-hamburger__close w-7 h-7 border flex items-center justify-center"
               onClick={() => setIsOpen(false)}
