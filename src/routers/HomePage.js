@@ -37,21 +37,6 @@ function HomePage() {
       <div className="home-page__banner">
         <BannerSlide />
       </div>
-      {/* multi column */}
-      <div className="home-page__multi-column">
-        <MultiColumn />
-      </div>
-      {/* service */}
-      <div className="home-page__service">
-        <div className="home-page__heading">
-          <HeadingSection
-            icon={icons[1]}
-            title="Dịch vụ của chúng tôi"
-            alignment="start"
-          />
-        </div>
-        <Service />
-      </div>
       {/* categories */}
       <div className="home-page__categories">
         <div className="home-page__heading">
@@ -84,6 +69,21 @@ function HomePage() {
           />
         </div>
         <BlogPost />
+      </div>
+      {/* multi column */}
+      <div className="home-page__multi-column">
+        <MultiColumn />
+      </div>
+      {/* service */}
+      <div className="home-page__service">
+        <div className="home-page__heading">
+          <HeadingSection
+            icon={icons[1]}
+            title="Dịch vụ của chúng tôi"
+            alignment="start"
+          />
+        </div>
+        <Service />
       </div>
     </div>
   );

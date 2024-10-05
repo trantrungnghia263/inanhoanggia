@@ -38,7 +38,7 @@ function Contact() {
           />
         </svg>
       ),
-      title: "Ngách 18, ngõ 181 Xuân Thuỷ, Cầu Giấy, Hà Nội",
+      title: "Số 11 Đông Quan - Quan Hoa - Cầu Giấy - Hà Nội",
     },
     {
       id: 2,
