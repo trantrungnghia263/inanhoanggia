@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 
 //IMAGES
-import banner1 from "../assets/banner/banner1.jpg";
-import banner2 from "../assets/banner/banner3.jpeg";
-import banner3 from "../assets/banner/banner2.jpeg";
+import banner1 from "../assets/banner/1.png";
+import banner2 from "../assets/banner/3.png";
+import banner3 from "../assets/banner/2.png";
 
 function BannerSlide() {
   const [activeIndex, setActiveIndex] = useState(0);
