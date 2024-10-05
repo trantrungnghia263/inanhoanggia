@@ -38,7 +38,7 @@ function HomePage() {
         <BannerSlide />
       </div>
       {/* categories */}
-      <div className="home-page__categories">
+      <div className="home-page__categories pt-10">
         <div className="home-page__heading">
           <HeadingSection
             icon={icons[1]}
