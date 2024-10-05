@@ -58,7 +58,7 @@ function Footer() {
           />
         </svg>
       ),
-      title: "Số 11 Đông Quan - Quan Hoa - Cầu Giấy - Hà Nội",
+      title: "Số 11 Đông Quan, Quan Hoa, Cầu Giấy, Hà Nội",
     },
     {
       id: 2,
