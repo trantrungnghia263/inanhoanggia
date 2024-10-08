@@ -23,7 +23,7 @@ function Service() {
   ];
 
   useEffect(() => {
-    AOS.init({ duration: 500 });
+    AOS.init({ duration: 300 });
   }, []);
 
   return (
@@ -39,13 +39,13 @@ function Service() {
                 className={`service__image overflow-hidden ${
                   index === 1 ? "order-last" : ""
                 }`}
-                data-aos="fade-in"
               >
                 <img
                   className="transition duration-500 w-full h-full min-h-48 hover:scale-105"
                   src={item.url}
                   alt={item.title}
                   loading="lazy"
+                  data-aos="zoom-in"
                 />
               </div>
               <div

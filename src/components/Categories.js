@@ -27,7 +27,7 @@ function Categories() {
   };
 
   useEffect(() => {
-    AOS.init({ duration: 500 });
+    AOS.init({ duration: 300 });
   }, []);
 
   return (
@@ -41,7 +41,6 @@ function Categories() {
                 key={index}
                 onClick={() => handleCategoriesClick(item.title)}
                 data-aos="fade-up"
-                data-aos-ofset={`${index}00`}
               >
                 <ItemCard
                   image={item.imageUrl}

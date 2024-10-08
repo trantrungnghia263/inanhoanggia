@@ -90,7 +90,7 @@ function MultiColumn() {
   ];
 
   useEffect(() => {
-    AOS.init({ duration: 500 });
+    AOS.init({ duration: 300 });
   }, []);
 
   return (
@@ -103,7 +103,6 @@ function MultiColumn() {
                 key={column.id}
                 className="p-6 transiton duration-300 border border-dashed border-green-600 rounded-2xl flex flex-col items-center hover:shadow-2xl hover:border-solid hover:border-gray-300"
                 data-aos="fade-up"
-                data-aos-delay={`${index}00`}
               >
                 <div>{column.icon}</div>
                 <h3 className="mt-4 text-base text-gray-950 uppercase text-center font-semibold">

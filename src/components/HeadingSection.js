@@ -5,7 +5,7 @@ import AOS from "aos";
 
 function HeadingSection({ icon, title, alignment }) {
   useEffect(() => {
-    AOS.init({ duration: 100 });
+    AOS.init({ duration: 300 });
   }, []);
 
   return (

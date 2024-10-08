@@ -27,7 +27,7 @@ function BlogPost() {
   };
 
   useEffect(() => {
-    AOS.init({ duration: 500 });
+    AOS.init({ duration: 300 });
   }, []);
 
   return (
@@ -40,7 +40,6 @@ function BlogPost() {
               key={blog.id}
               onClick={() => handleBlogClick(blog.title)}
               data-aos="fade-up"
-              data-aos-delay={`${index}00`}
             >
               <BlogCard
                 title={blog.title}

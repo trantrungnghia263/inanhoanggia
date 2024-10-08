@@ -101,7 +101,7 @@ function BlogPage() {
   };
 
   useEffect(() => {
-    AOS.init({ duration: 500 });
+    AOS.init({ duration: 300 });
   }, []);
 
   return (
@@ -132,7 +132,6 @@ function BlogPage() {
                   key={blog.id}
                   onClick={() => handleBlogClick(blog.title)}
                   data-aos="fade-up"
-                  data-aos-delay={`${index}00`}
                 >
                   <BlogCard
                     title={blog.title}
@@ -189,7 +188,6 @@ function BlogPage() {
                     className="blog-page__item"
                     onClick={() => handleCategoriesClick(item.title)}
                     data-aos="fade-up"
-                    data-aos-delay={`${index}00`}
                   >
                     <ItemCard
                       image={item.imageUrl}

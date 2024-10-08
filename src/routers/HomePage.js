@@ -28,7 +28,7 @@ function HomePage() {
   ];
 
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 300 });
   }, []);
 
   return (

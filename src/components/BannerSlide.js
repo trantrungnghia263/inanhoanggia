@@ -1,15 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 
-//IMAGES
+// IMAGES
 import banner1 from "../assets/banner/1.png";
 import banner2 from "../assets/banner/3.png";
 import banner3 from "../assets/banner/2.png";
+import banner1_mb from "../assets/banner/1mb.png";
+import banner2_mb from "../assets/banner/2mb.png";
+import banner3_mb from "../assets/banner/3mb.png";
 
 function BannerSlide() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const images = [banner1, banner2, banner3];
+  const imagesMB = [banner1_mb, banner2_mb, banner3_mb];
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handlePrevClick = () => {
     setActiveIndex(
@@ -41,6 +57,9 @@ function BannerSlide() {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  // Select images based on screen size
+  const currentImages = isMobile ? imagesMB : images;
+
   return (
     <div
       id="banner-carousel"
@@ -48,8 +67,8 @@ function BannerSlide() {
       data-carousel="slide"
       {...handlers}
     >
-      <div className="banner-carousel__content relative overflow-hidden rounded-lg">
-        {images.map((image, index) => (
+      <div className="banner-carousel__content relative overflow-hidden">
+        {currentImages.map((image, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
@@ -67,7 +86,7 @@ function BannerSlide() {
         ))}
       </div>
       <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-        {images.map((_, index) => (
+        {currentImages.map((_, index) => (
           <button
             key={index}
             type="button"
@@ -82,7 +101,7 @@ function BannerSlide() {
       </div>
       <button
         type="button"
-        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="hidden md:block absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={handlePrevClick}
         data-carousel-prev
       >
@@ -107,7 +126,7 @@ function BannerSlide() {
       </button>
       <button
         type="button"
-        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="hidden md:block absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={handleNextClick}
         data-carousel-next
       >
