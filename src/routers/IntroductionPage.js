@@ -85,8 +85,8 @@ function IntroductionPage() {
                 Đến với In Hoàng Gia quý doanh nghiệp sẽ được trải nghiệm dịch
                 vụ in ấn chuyên nghiệp, giá cả cạnh tranh. Cùng với đó, In Hoàng
                 Gia luôn đưa ra những lời cam kết vàng trong dịch vụ. Vì vậy quý
-                doanh nghiệp hoàn toàn có thể đặt niềm tin tuyệt đối vào Nguyên
-                Bảo.
+                doanh nghiệp hoàn toàn có thể đặt niềm tin tuyệt đối vào in
+                Hoàng Gia.
               </p>
               <h6 className="introduction-page__title text-lg text-emerald-700 py-2">
                 Sứ mệnh – Mục tiêu – Phương châm hoạt động
