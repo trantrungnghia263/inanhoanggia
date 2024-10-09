@@ -13,6 +13,9 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 import ani from "../assets/gif/maintrance.json";
 import Lottie from "lottie-react";
 
+//IMAGES
+import image_bg from "../assets/banner/bg.jpg";
+
 function QuotationPage() {
   useDocumentTitle("Báo giá - Công ty in Hoàng Gia");
 
@@ -44,15 +47,20 @@ function QuotationPage() {
             <div className="quotation-page__title">
               <HeadingSection title="Báo giá dịch vụ" icon={icons} />
             </div>
-            <div className="pt-4">
-              <PageEmpty title="Trang báo giá hiện đang được cập nhật..." />
+            <div className="quotation-page__image flex items-center justify-center pt-4">
+              <img src={image_bg} alt="Báo giá" />
             </div>
-            <div className="quotation-page__animate pt-6 md:pt-8 lg:pt-0 w-full flex items-center justify-center lg:absolute lg:left-1/2 lg:top-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2">
-              <Lottie
-                animationData={ani}
-                loop={true}
-                className="w-72 md:w-96"
-              />
+            <div className="hidden">
+              <div className="pt-4">
+                <PageEmpty title="Trang báo giá hiện đang được cập nhật..." />
+              </div>
+              <div className="quotation-page__animate pt-6 md:pt-8 lg:pt-0 w-full flex items-center justify-center lg:absolute lg:left-1/2 lg:top-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2">
+                <Lottie
+                  animationData={ani}
+                  loop={true}
+                  className="w-72 md:w-96"
+                />
+              </div>
             </div>
           </div>
         </div>
