@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 //AOS ANIMATION
 import AOS from "aos";
 
-function HeadingSection({ icon, title, alignment }) {
+function HeadingSection({ icon, title, alignment, isAnimate }) {
   useEffect(() => {
     AOS.init({ duration: 300 });
   }, []);
@@ -13,7 +13,7 @@ function HeadingSection({ icon, title, alignment }) {
       <div className="container">
         <div
           className={`heading-section__content py-2 border-b flex items-center justify-${alignment} gap-1`}
-          data-aos="fade-up"
+          // data-aos={isAnimate ? "fade-up" : ""}
         >
           <div
             className="heading-section__icon flex items-center justify-center"
