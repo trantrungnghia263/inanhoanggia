@@ -7,6 +7,7 @@ import BlogSidebar from "../components/BlogSidebar";
 import HeadingSection from "../components/HeadingSection";
 import MultiColumn from "../components/MultiColumn";
 import Tag from "../components/Tag";
+import Loading from "../components/Loading";
 
 //HOOKS
 import useDocumentTitle from "../hooks/useDocumentTitle";
@@ -104,7 +105,7 @@ function PolicyPage() {
         2.Với khách hàng tại các tỉnh thành trong cả nước
       </h6>
       <p class="policy-page__paragraph text-base text-gray-500 pb-2">
-      In Hoàng Gia giao hàng tận nơi cho khách hàng tại các thành phố lớn trong cả nước. Hình thức gửi hàng thông qua bưu điện hoặc gửi xe khách đi các tỉnh. Một số trường hợp quận huyện xa xôi, khó khăn trong giao hàng, quý khách vui lòng lấy hàng tại văn phòng nhà xe ở tỉnh thành đó.
+      In ấn Hoàng Gia giao hàng tận nơi cho khách hàng tại các thành phố lớn trong cả nước. Hình thức gửi hàng thông qua bưu điện hoặc gửi xe khách đi các tỉnh. Một số trường hợp quận huyện xa xôi, khó khăn trong giao hàng, quý khách vui lòng lấy hàng tại văn phòng nhà xe ở tỉnh thành đó.
       </p>
       <p class="policy-page__paragraph text-base text-gray-500 pb-4">
       Trường hợp gửi bưu điện, phần tiền còn lại sẽ được thanh toán khi khách hàng nhận hàng. Với trường hợp gửi xe khách không có dịch vụ thu hộ, khách hàng vui lòng thanh toán trước khi chúng tôi gửi hàng. Trường hợp này chúng tôi sẽ gửi mẫu hàng đã sản xuất hoặc gửi clip chi tiết để khách hàng nghiệm thu.
@@ -118,14 +119,14 @@ function PolicyPage() {
         1.Trường hợp được đổi trả hàng
       </h6>
       <p class="policy-page__paragraph text-base text-gray-500">
-      Quý khách có thể được đổi trả hàng khi số lượng sản phẩm do công ty in Hoàng Gia sản xuất ra bị lỗi nhiều trên 40% quý khách có thể được hoàn lại tiền hoặc hoàn lại bằng sản phẩm mới tưng ứng số sản phẩm quý khách đã nhận đặt in
+      Quý khách có thể được đổi trả hàng khi số lượng sản phẩm do In ấn Hoàng Gia sản xuất ra bị lỗi nhiều trên 40% quý khách có thể được hoàn lại tiền hoặc hoàn lại bằng sản phẩm mới tưng ứng số sản phẩm quý khách đã nhận đặt in
       Sản phẩm phải còn được nguyên tem nguyên đai nguyên kiện chưa có dấu hiệu bị xước, rách, hay bẩn và chưa được sử đụng
       </p>
       <h6 class="policy-page__title text-base text-emerald-700 uppercase py-3">
         2. Sản phẩm giao hàng không đúng theo đơn
       </h6>
       <p class="policy-page__paragraph text-base text-gray-500 pb-2">
-      Trong trường hợp mà bạn cảm thấy sản phẩm của bạn đặt in mà không đúng như theo trên đơn hàng thì hay nhanh tay liên hệ lại với công ty in Hoàng Gia cảu chúng tôi để được nhân viên tư vấn và kiểm tra lại sản phẩm. Nếu đúng như giao hàng sai chúng tôi sẽ thu lại và hoàn lại sản phẩm cho bạn theo đúng như đơn
+      Trong trường hợp mà bạn cảm thấy sản phẩm của bạn đặt in mà không đúng như theo trên đơn hàng thì hay nhanh tay liên hệ lại với In ấn Hoàng Gia cảu chúng tôi để được nhân viên tư vấn và kiểm tra lại sản phẩm. Nếu đúng như giao hàng sai chúng tôi sẽ thu lại và hoàn lại sản phẩm cho bạn theo đúng như đơn
       </p>
       <h6 class="policy-page__title text-base text-emerald-700 uppercase py-3">
         3.Điều kiện đổi trả hàng
@@ -155,13 +156,13 @@ function PolicyPage() {
         1.Mục đích và phạm vi thu thập thông tin
       </h6>
       <p class="policy-page__paragraph text-base text-gray-500 pb-2">
-      Website này được Công ty in Hoàng Gia quản lý. Khi mỗi khách hàng truy cập vào website này, trang web sẽ tự động lưu địa chỉ IP cùng với tên miền. Chúng tôi cũng sử dụng các công cụ kiểm tra như “cookie”. Một tài khoản cookie sẽ lưu trữ dữ liệu mà server của website gửi đến trình duyệt của khách hàng khi khách hàng truy cập vào trang web, việc sử dụng chức năng này sẽ giúp chúng tôi hỗ trợ và tìm hiểu nhu cầu, thị hiếu của khách hàng khi truy cập vào website của chúng tôi.
+      Website này được In ấn Hoàng Gia quản lý. Khi mỗi khách hàng truy cập vào website này, trang web sẽ tự động lưu địa chỉ IP cùng với tên miền. Chúng tôi cũng sử dụng các công cụ kiểm tra như “cookie”. Một tài khoản cookie sẽ lưu trữ dữ liệu mà server của website gửi đến trình duyệt của khách hàng khi khách hàng truy cập vào trang web, việc sử dụng chức năng này sẽ giúp chúng tôi hỗ trợ và tìm hiểu nhu cầu, thị hiếu của khách hàng khi truy cập vào website của chúng tôi.
       </p>
       <p class="policy-page__paragraph text-base text-gray-500 pb-2">
       Chúng tôi cũng kết hợp thông tin về địa chỉ IP và tên miền của khách hàng cùng với các thông tin khác mà khách hàng cung cấp. Các thông tin này được cung cấp qua những email khách hàng gửi cho chúng tôi, hoặc các thông tin khách hàng điền khi muốn đăng ký, ý kiến phản hồi, những yêu cầu được hỗ trợ, trả lời phiếu điều tra hoặc tham gia vào một cuộc thi/ các hoạt động khuyến mại.
       </p>
       <p class="policy-page__paragraph text-base text-gray-500">
-      Công ty in Hoàng Gia luôn luôn bảo mật thông tin cho tất cả các khách hàng đến đặt in sản phẩm của chúng tôi . Chúng tôi cam kết không bán thông tin hay làm gì ảnh hưởng đến thông tin của khác hàng, và không để cho bên thứ 3 biết.
+      In ấn Hoàng Gia luôn luôn bảo mật thông tin cho tất cả các khách hàng đến đặt in sản phẩm của chúng tôi . Chúng tôi cam kết không bán thông tin hay làm gì ảnh hưởng đến thông tin của khác hàng, và không để cho bên thứ 3 biết.
       </p>
       <h6 class="policy-page__title text-base text-emerald-700 uppercase py-3">
         2.Phạm vi sử dụng thông tin
@@ -200,7 +201,7 @@ function PolicyPage() {
       – CÔNG TY TNHH IN HOÀNG GIA
       </p>
       <p class="policy-page__paragraph text-base text-gray-500 pb-2">
-      – Các đối tác có ký hợp động thực hiện 1 phần dịch vụ do CÔNG TY IN HOÀNG GIA. Các đối tác này sẽ nhận được những thông tin theo thỏa thuận hợp đồng (có thể 1phần hoặc toàn bộ thông tin tuy theo điều khoản hợp đồng) để tiến hành hỗ trợ người dùng sử dụng dịch vụ do Công ty cung cấp.
+      – Các đối tác có ký hợp động thực hiện 1 phần dịch vụ do In ấn Hoàng Gia. Các đối tác này sẽ nhận được những thông tin theo thỏa thuận hợp đồng (có thể 1phần hoặc toàn bộ thông tin tuy theo điều khoản hợp đồng) để tiến hành hỗ trợ người dùng sử dụng dịch vụ do Công ty cung cấp.
       </p>
       <h6 class="policy-page__title text-base text-emerald-700 uppercase py-3">
         5.Địa chỉ của đơn vị thu thập và quản lý thông tin cá nhân
@@ -277,6 +278,15 @@ function PolicyPage() {
 
   useDocumentTitle(pageTitle);
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="policy-page pt-4 pb-10 md:pt-6 lg:py-10">
       <div className="container">
@@ -298,16 +308,24 @@ function PolicyPage() {
             className="col"
             style={{ "--col-sm": "12", "--col-md": "8", "--col-lg": "9" }}
           >
-            <div className="policy-page__heading">
-              <HeadingSection title={pageTitle} icon={icons} />
-            </div>
-            <div
-              className="policy-page__content pt-4"
-              dangerouslySetInnerHTML={{ __html: policyContent }}
-            ></div>
-            <div className="policy-page__bottom pt-4 border-t">
-              <Tag />
-            </div>
+            {loading ? (
+              <div className="pt-10">
+                <Loading pt="32" />
+              </div>
+            ) : (
+              <div>
+                <div className="policy-page__heading">
+                  <HeadingSection title={pageTitle} icon={icons} />
+                </div>
+                <div
+                  className="policy-page__content pt-4"
+                  dangerouslySetInnerHTML={{ __html: policyContent }}
+                ></div>
+                <div className="policy-page__bottom pt-4 border-t">
+                  <Tag />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

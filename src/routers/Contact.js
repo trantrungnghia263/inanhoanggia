@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 //COMPONENT
 import ContactForm from "../components/ContactForm";
+import Loading from "../components/Loading";
 
 //HOOKS
 import useDocumentTitle from "../hooks/useDocumentTitle";
 
 function Contact() {
-  useDocumentTitle("Liên hệ - Công ty in Hoàng Gia");
+  useDocumentTitle("Liên hệ - In ấn Hoàng Gia");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const infoArr = [
     {
@@ -113,38 +122,46 @@ function Contact() {
   return (
     <div className="contact pt-6 pb-10 lg:py-10">
       <div className="container">
-        <div className="contact__grid grid-cols-12 grid gap-4">
-          <div className="col-start-1 col-end-13 lg:col-end-5">
-            <h3 className="text-emerald-700 text-lg uppercase">
-              CÔNG TY IN HOÀNG GIA
-            </h3>
-            <p className="text-base text-gray-500 pt-3">
-              In Hoàng Gia là một địa chỉ công ty in uy tín tại Hà Nội. Chúng
-              tôi luôn cung cấp dịch vụ in ấn chất lượng, đáng tin cậy với giá
-              cả cạnh tranh. Liên hệ ngay hôm nay để được tư vấn và nhận báo giá
-              tốt nhất!
-            </p>
-            <ul className="contact__list pt-4">
-              {infoArr.map((item) => (
-                <li
-                  className="contact__item flex gap-2 items-center text-base text-gray-500 py-2"
-                  key={item.id}
-                >
-                  <div className="contact__icon">{item.icon}</div>
-                  <p>{item.title}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="col-start-1 col-end-13 lg:col-start-6 pt-8 md:pt-10 lg:pt-0">
-            <h3 className="text-emerald-700 text-lg uppercase pb-1">
-              Vui lòng để lại thông tin của bạn
-            </h3>
-            <p className="text-base text-gray-500 pb-4">
-              Chúng tôi sẽ liên hệ lại với bạn ngay khi có thể.
-            </p>
-            <ContactForm />
-          </div>
+        <div className="contact__grid">
+          {loading ? (
+            <div className="py-28">
+              <Loading pt="32" />
+            </div>
+          ) : (
+            <div className="grid-cols-12 grid gap-4">
+              <div className="col-start-1 col-end-13 lg:col-end-5">
+                <h3 className="text-emerald-700 text-lg uppercase">
+                  IN ẤN HOÀNG GIA
+                </h3>
+                <p className="text-base text-gray-500 pt-3">
+                  In ấn Hoàng Gia là một địa chỉ công ty in uy tín tại Hà Nội.
+                  Chúng tôi luôn cung cấp dịch vụ in ấn chất lượng, đáng tin cậy
+                  với giá cả cạnh tranh. Liên hệ ngay hôm nay để được tư vấn và
+                  nhận báo giá tốt nhất!
+                </p>
+                <ul className="contact__list pt-4">
+                  {infoArr.map((item) => (
+                    <li
+                      className="contact__item flex gap-2 items-center text-base text-gray-500 py-2"
+                      key={item.id}
+                    >
+                      <div className="contact__icon">{item.icon}</div>
+                      <p>{item.title}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="col-start-1 col-end-13 lg:col-start-6 pt-8 md:pt-10 lg:pt-0">
+                <h3 className="text-emerald-700 text-lg uppercase pb-1">
+                  Vui lòng để lại thông tin của bạn
+                </h3>
+                <p className="text-base text-gray-500 pb-4">
+                  Chúng tôi sẽ liên hệ lại với bạn ngay khi có thể.
+                </p>
+                <ContactForm />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

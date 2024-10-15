@@ -12,7 +12,7 @@ function Service() {
       url: img1,
       title: "DỊCH VỤ IN",
       description:
-        "Công ty in Hoàng Gia cung cấp các dịch vụ in ấn bạt Hiflex, decal PP, decal ôtô, băng rôn, backlit, canvas ... Chúng tôi liên kết để tạo ra hệ thống máy móc, nhà xưởng đầy đủ và hiện đại nhằm cung cấp dịch vụ in ấn với chất lượng cao và giá thành cạnh tranh nhất tới khách hàng. Rất hy vọng nhận được sự hợp tác và đồng hành cùng Quý khách.",
+        "In ấn Hoàng Gia cung cấp các dịch vụ in ấn bạt Hiflex, decal PP, decal ôtô, băng rôn, backlit, canvas ... Chúng tôi liên kết để tạo ra hệ thống máy móc, nhà xưởng đầy đủ và hiện đại nhằm cung cấp dịch vụ in ấn với chất lượng cao và giá thành cạnh tranh nhất tới khách hàng. Rất hy vọng nhận được sự hợp tác và đồng hành cùng Quý khách.",
     },
     {
       url: "https://inbacviet.com.vn/wp-content/themes/lamvt-inbacviet/images/dich-vu-2.jpg",

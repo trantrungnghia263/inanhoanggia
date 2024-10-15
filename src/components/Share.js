@@ -178,7 +178,8 @@ function Share() {
           <a
             className="df-center"
             target="blank"
-            href="https://www.messenger.com/t/61556617670526/"
+            // href="https://www.messenger.com/t/61567073975328/"
+            href="https://www.facebook.com/61567073975328"
             title="Messenger"
           >
             <div className="sharing__item-icon df-center">
@@ -197,7 +198,7 @@ function Share() {
             </div>
           </a>
           <div className="tooltip-text" style={{ "--width": "250px" }}>
-            <p>Chat với chúng tôi qua Messenger</p>
+            <p>Chat với chúng tôi qua Fanpage</p>
           </div>
         </div>
       </div>

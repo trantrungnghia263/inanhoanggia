@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import NavSidebar from "../components/NaviSidebar";
 import BlogSidebar from "../components/BlogSidebar";
 import Tag from "../components/Tag";
+import Loading from "../components/Loading";
 
 //FUNCTION
 import { createSlug } from "../util/createSlug";
@@ -15,17 +16,25 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 function BlogDetail() {
   const { slug } = useParams();
   const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/blogs.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const foundBlog = data.blogs.find(
-          (blog) => createSlug(blog.title) === slug
-        );
-        setBlog(foundBlog);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
+    const timer = setTimeout(() => {
+      fetch("/data/blogs.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const foundBlog = data.blogs.find(
+            (blog) => createSlug(blog.title) === slug
+          );
+          setBlog(foundBlog);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          setLoading(false);
+        });
+    }, 1000);
+    return () => clearTimeout(timer);
   }, [slug]);
 
   // Set page title based on category.title
@@ -53,29 +62,31 @@ function BlogDetail() {
             className="blog-detail__right col"
             style={{ "--col-sm": "12", "--col-md": "8", "--col-lg": "9" }}
           >
-            {blog ? (
-              <div className="blog-detail__body">
-                <h3 className="blog-detail__heading text-lg text-emerald-700 uppercase pb-4">
-                  {blog.title}
-                </h3>
-                <div className="blog-detail__image p-3 border w-fit">
-                  <img src={blog.image} alt={blog.title} />
-                </div>
-                <p className="blog-detail__description text-base text-gray-500 py-3">
-                  {blog.description}
-                </p>
-                <div
-                  className="blog-detail__box pt-3 pb-6"
-                  dangerouslySetInnerHTML={{ __html: blog.content }}
-                ></div>
-                <div className="blog-detail__bottom pt-4 border-t">
-                  <Tag />
-                </div>
+            {loading ? (
+              <div className="blog-detail__loading">
+                <Loading pt="32" />
               </div>
             ) : (
-              <div className="blog-detail__loading">
-                <p>Loading...</p>
-              </div>
+              blog && (
+                <div className="blog-detail__body">
+                  <h3 className="blog-detail__heading text-lg text-emerald-700 uppercase pb-4">
+                    {blog.title}
+                  </h3>
+                  <div className="blog-detail__image p-3 border w-fit">
+                    <img src={blog.image} alt={blog.title} />
+                  </div>
+                  <p className="blog-detail__description text-base text-gray-500 py-3">
+                    {blog.description}
+                  </p>
+                  <div
+                    className="blog-detail__box pt-3 pb-6"
+                    dangerouslySetInnerHTML={{ __html: blog.content }}
+                  ></div>
+                  <div className="blog-detail__bottom pt-4 border-t">
+                    <Tag />
+                  </div>
+                </div>
+              )
             )}
           </div>
         </div>

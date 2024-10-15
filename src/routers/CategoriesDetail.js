@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import NavSidebar from "../components/NaviSidebar";
 import BlogSidebar from "../components/BlogSidebar";
 import Tag from "../components/Tag";
+import Information from "../components/Information";
+import Loading from "../components/Loading";
 
 // FUNCTION
 import { createSlug } from "../util/createSlug";
@@ -16,17 +18,25 @@ function CategoriesDetail() {
   const { slug } = useParams();
 
   const [category, setCategory] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data/categories.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const foundCategory = data.categories.find(
-          (categories) => createSlug(categories.title) === slug
-        );
-        setCategory(foundCategory);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
+    const timer = setTimeout(() => {
+      fetch("/data/categories.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const foundCategory = data.categories.find(
+            (categories) => createSlug(categories.title) === slug
+          );
+          setCategory(foundCategory);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          setLoading(false);
+        });
+    }, 1000);
+    return () => clearTimeout(timer);
   }, [slug]);
 
   // Set page title based on category.title
@@ -55,27 +65,32 @@ function CategoriesDetail() {
             style={{ "--col-sm": "12", "--col-md": "8", "--col-lg": "9" }}
           >
             {/* Conditional rendering to prevent null access */}
-            {category ? (
-              <>
-                <div className="categories-detail__body">
-                  <h3 className="categories-detail__heading text-lg text-emerald-700 uppercase pb-4">
-                    {category.title}
-                  </h3>
-                  <div className="categories-detail__image">
-                    <img
-                      src={category.imageUrl}
-                      alt={category.title}
-                      className="object-cover w-full"
-                    />
-                  </div>
-                  <div
-                    className="categries__content pt-4"
-                    dangerouslySetInnerHTML={{ __html: category.content }}
-                  ></div>
-                </div>
-              </>
+            {loading ? (
+              <Loading pt="pt-32" />
             ) : (
-              <p>Loading...</p>
+              category && (
+                <>
+                  <div className="categories-detail__body">
+                    <h3 className="categories-detail__heading text-lg text-emerald-700 uppercase pb-4">
+                      {category.title}
+                    </h3>
+                    <div className="categories-detail__image">
+                      <img
+                        src={category.imageUrl}
+                        alt={category.title}
+                        className="object-cover w-full"
+                      />
+                    </div>
+                    <div
+                      className="categries__content pt-4"
+                      dangerouslySetInnerHTML={{ __html: category.content }}
+                    ></div>
+                    <div className="categories-detail__info pt-8">
+                      <Information />
+                    </div>
+                  </div>
+                </>
+              )
             )}
           </div>
         </div>

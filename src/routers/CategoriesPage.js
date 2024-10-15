@@ -6,6 +6,7 @@ import NavSidebar from "../components/NaviSidebar";
 import BlogPost from "../components/BlogPost";
 import ItemCard from "../components/ItemCard";
 import HeadingSection from "../components/HeadingSection";
+import Loading from "../components/Loading";
 
 //HOOKS
 import useDocumentTitle from "../hooks/useDocumentTitle";
@@ -14,16 +15,26 @@ import useDocumentTitle from "../hooks/useDocumentTitle";
 import { createSlug } from "../util/createSlug";
 
 function CategoriesPage() {
-  useDocumentTitle("Danh mục in - Công ty in Hoàng Gia");
+  useDocumentTitle("Danh mục in - In ấn Hoàng Gia");
 
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/data/categories.json")
-      .then((res) => res.json())
-      .then((data) => setCategories(data.categories))
-      .catch((error) => console.error("Error fetching data:", error));
+    const timer = setTimeout(() => {
+      fetch("/data/categories.json")
+        .then((res) => res.json())
+        .then((data) => {
+          setCategories(data.categories);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          setLoading(false);
+        });
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleCategoriesClick = (title) => {
@@ -56,23 +67,29 @@ function CategoriesPage() {
             <div className="categories-page__title">
               <HeadingSection title="Tất cả danh mục in ấn" icon={icons} />
             </div>
-            <div className="categories-page__wrapper pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {categories && categories.length > 0 ? (
-                categories.map((item, index) => (
-                  <div
-                    className="categories-page__item"
-                    key={index}
-                    onClick={() => handleCategoriesClick(item.title)}
-                  >
-                    <ItemCard
-                      image={item.imageUrl}
-                      link={`/danh-muc-in/${createSlug(item.title)}`}
-                      title={item.title}
-                    />
-                  </div>
-                ))
+            <div className="categories-page__wrapper pt-4">
+              {loading ? (
+                <Loading pt="32" />
               ) : (
-                <div>Loading...</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {categories && categories.length > 0 ? (
+                    categories.map((item, index) => (
+                      <div
+                        className="categories-page__item"
+                        key={index}
+                        onClick={() => handleCategoriesClick(item.title)}
+                      >
+                        <ItemCard
+                          image={item.imageUrl}
+                          link={`/danh-muc-in/${createSlug(item.title)}`}
+                          title={item.title}
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <div>Not found...</div>
+                  )}
+                </div>
               )}
             </div>
           </div>
@@ -86,7 +103,13 @@ function CategoriesPage() {
             />
           </div>
           <div className="categories-page__blog">
-            <BlogPost />
+            {loading ? (
+              <div className="pt-10">
+                <Loading pt="32" />
+              </div>
+            ) : (
+              <BlogPost />
+            )}
           </div>
         </div>
       </div>

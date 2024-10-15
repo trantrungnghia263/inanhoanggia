@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 
 //IMAGES
 import iconFb from "../assets/social-media/facebook.png";
-import iconIg from "../assets/social-media/instagram.png";
-import iconTw from "../assets/social-media/twitter.png";
 import iconGm from "../assets/social-media/envelope.png";
+import iconZl from "../assets/social-media/zalo-icon.png";
 import iconCopyRight from "../assets/social-media/copyright.png";
 
 function Footer() {
@@ -133,23 +132,18 @@ function Footer() {
   const socialMedia = [
     {
       icon: iconFb,
-      url: "http://facebook.com/ttn263",
+      url: "https://www.facebook.com/61567073975328",
       context: "Facebook",
     },
     {
-      icon: iconIg,
-      url: "http://instagram.com/ttn263",
-      context: "Instagram",
-    },
-    {
-      icon: iconTw,
-      url: "http://twitter.com/ttn263",
-      context: "Twitter",
-    },
-    {
       icon: iconGm,
-      url: "http://gmail.com/ttn263",
+      url: "mailto: inanhoanggia.ht.85@gmail.com?subject=Feedback&body=Message",
       context: "Gmail",
+    },
+    {
+      icon: iconZl,
+      url: "https://zalo.me/0765384567",
+      context: "Zalo",
     },
   ];
 
@@ -159,20 +153,13 @@ function Footer() {
     { title: "In decal pp", link: "/danh-muc-in/in-decal-pp" },
     { title: "In decal ô tô", link: "/danh-muc-in/in-decal-o-to" },
     { title: "In backlit", link: "/danh-muc-in/in-backlit" },
+    { title: "In backdrop", link: "/danh-muc-in/in-backdrop" },
     { title: "In băng rôn", link: "/danh-muc-in/in-bang-ron" },
   ];
 
   const policies = [
     { title: "Điều khoản dịch vụ", link: "/chinh-sach/dieu-khoan-dich-vu" },
     { title: "Chính sách giao hàng", link: "/chinh-sach/chinh-sach-giao-hang" },
-    {
-      title: "Chính sách xử lý khiếu nại",
-      link: "/chinh-sach/chinh-sach-xu-ly-khieu-nai",
-    },
-    {
-      title: "Chính sách thanh toán và vận chuyển khiếu nại",
-      link: "/chinh-sach/chinh-sach-thanh-toan-va-van-chuyen-khieu-nai",
-    },
     {
       title: "Chính sách bảo mật thông tin",
       link: "/chinh-sach/chinh-sach-bao-mat-thong-tin",
@@ -236,12 +223,17 @@ function Footer() {
                 <div className="footer__social pt-6 flex items-center gap-4">
                   {socialMedia.map((item, index) => (
                     <Link
+                      target="_blank"
                       to={item.url}
-                      className="footer__icon flex items-center justify-center transition duration-300 hover:scale-105"
+                      className="footer__icon w-8 h-8 flex items-center justify-center transition duration-300 hover:scale-105"
                       key={index}
                       aria-label="Icon link"
                     >
-                      <img src={item.icon} alt="" />
+                      <img
+                        src={item.icon}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
                     </Link>
                   ))}
                 </div>
