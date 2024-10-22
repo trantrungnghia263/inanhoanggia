@@ -26,7 +26,7 @@ function MenuHamburger({ isOpen, setIsOpen }) {
         { sub_title: "In băng rôn", sub_link: "/danh-muc-in/in-bang-ron" },
       ],
     },
-    { title: "Báo giá", link: "/bao-gia" },
+    // { title: "Báo giá", link: "/bao-gia" },
     { title: "Tin tức", link: "/tin-tuc" },
     { title: "Liên hệ", link: "/lien-he" },
   ];

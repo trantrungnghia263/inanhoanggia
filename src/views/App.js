@@ -17,7 +17,7 @@ import BlogPage from "../routers/BlogPage";
 import BlogDetail from "../routers/BlogDetail";
 import IntroductionPage from "../routers/IntroductionPage";
 import Contact from "../routers/Contact";
-import QuotationPage from "../routers/QuotationPage";
+// import QuotationPage from "../routers/QuotationPage";
 import PolicyPage from "../routers/PolicyPage";
 import SearchResultsPage from "../routers/SearchResultsPage";
 
@@ -48,7 +48,7 @@ function AppContent() {
           <Route path="/tin-tuc/:slug" element={<BlogDetail />} />
           <Route path="/gioi-thieu" element={<IntroductionPage />} />
           <Route path="/lien-he" element={<Contact />} />
-          <Route path="/bao-gia" element={<QuotationPage />} />
+          {/* <Route path="/bao-gia" element={<QuotationPage />} /> */}
           <Route path="/chinh-sach/:slug" element={<PolicyPage />} />
           <Route path="/tim-kiem" element={<SearchResultsPage />} />
         </Routes>

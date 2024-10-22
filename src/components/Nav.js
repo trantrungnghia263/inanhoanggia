@@ -46,10 +46,10 @@ function Nav() {
       title: "Tin tức",
       link: "/tin-tuc",
     },
-    {
-      title: "Báo giá",
-      link: "/bao-gia",
-    },
+    // {
+    //   title: "Báo giá",
+    //   link: "/bao-gia",
+    // },
     {
       title: "Liên hệ",
       link: "/lien-he",
