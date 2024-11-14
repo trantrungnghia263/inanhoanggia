@@ -47,7 +47,7 @@ const categories = [
   {
     id: 6,
     imageUrl:
-      "https://innhanhdigital.com/wp-content/uploads/2020/11/in-pp-03.jpg",
+      "https://lh3.googleusercontent.com/p/AF1QipNPvfg9LZ7wyQDTEmnMiD0IHz_Vr4iLYORvb7gP=s680-w680-h510",
     title: "In decal pp",
   },
 ];
@@ -55,6 +55,14 @@ const categories = [
 const blogs = [
   {
     id: 1,
+    title: "Khai trương cửa hàng In ấn Hoàng Gia",
+    description:
+      "Khai Trương Cửa Hàng In Ấn Hoàng Gia: Khởi Đầu Cho Một Hành Trình Mới! Chúng tôi rất vui mừng thông báo rằng cửa hàng In ấn Hoàng Gia chính thức khai trương! 🎉",
+    date: "2024-11-02",
+    image: "https://i.imgur.com/rjjVash.jpeg",
+  },
+  {
+    id: 2,
     title: "In Backdrop tiệc tất niên",
     description:
       "Thời điểm cuối năm đang tới gần, bạn cần tìm một nơi in backdrop tiệc tất niên chất lượng cao, uy tín và nhanh chóng? Hãy tham khảo dịch vụ in backdrop tiệc tất niên của In ấn Hoàng Gia được giới thiệu trong bài viết sau đây.",
@@ -63,7 +71,7 @@ const blogs = [
       "https://inmauhanoi.com/wp-content/themes/yootheme/cache/b7/in-backdrop-tiec-tat-nien-b71a1a30.webp",
   },
   {
-    id: 2,
+    id: 3,
     title: "In băng rôn khẩu hiệu chất lượng, uy tín",
     description:
       "Bạn đang cần tim một địa chỉ in băng rôn khẩu hiệu đẹp tại Hà Nội? In ấn Hoàng Gia cung cấp dịch vụ in băng rôn khẩu hiệu giá rẻ, sản phẩm in chất lượng. Quý khách có nhu cầu đặt in, cùng chúng tôi tìm hiểu về dịch vụ in băng rôn khẩu hiệu mới nhất năm 2023, ứng dụng, ưu điểm ra sao,… trong bài viết dưới đây!",
@@ -71,7 +79,7 @@ const blogs = [
     image: "https://incucre.com/wp-content/uploads/2018/07/7.png",
   },
   {
-    id: 3,
+    id: 4,
     title: "Phông nền là gì? in phông nền ở đâu?",
     description:
       "Phông nền là gì? In phông nền bằng chất liệu gì? Cần lưu ý những điều gì khi in phông nền. Các bạn hãy tìm hiểu cùng In ấn Hoàng Gia với bài viết dưới đây nhé!",
@@ -80,7 +88,7 @@ const blogs = [
       "https://inmauhanoi.com/wp-content/themes/yootheme/cache/cb/in-phong-nen-1-e1703579863533-cb16b936.webp",
   },
   {
-    id: 4,
+    id: 5,
     title: "Giá in banner ngang cạnh tranh nhất hiện nay",
     description:
       "Banner là công cụ truyền thông hiệu quả, linh hoạt và tiết kiệm trong thời đại kỹ thuật số. Tại In ấn Hoàng Gia, chúng tôi cung cấp dịch vụ in banner ngang chất lượng với giá thành cạnh tranh.",
@@ -89,7 +97,7 @@ const blogs = [
       "https://inmauhanoi.com/wp-content/themes/yootheme/cache/01/gia-in-banner-ngang-2-e1703585500775-01ba038c.webp",
   },
   {
-    id: 5,
+    id: 6,
     title: "In băng rôn cổ vũ giá rẻ",
     description:
       "Băng rôn cổ vũ là vật dụng không thể thiếu trong mỗi sự kiện thể thao, nghệ thuật. Trong bài viết này, chúng tôi sẽ giới thiệu cho bạn một địa chỉ in băng rôn cổ vũ giá rẻ với chất lượng cao – In Màu Hà Nội. ",
@@ -98,7 +106,7 @@ const blogs = [
       "https://inmauhanoi.com/wp-content/themes/yootheme/cache/2f/in-bang-ron-co-vu-gia-re-2f58a0fc.webp",
   },
   {
-    id: 6,
+    id: 7,
     title: "In backdrop đám cưới tại Hà Nội",
     description:
       "In Backdrop đám cưới ngày nay trở nên được chú trọng, trở thành một thứ không thể thiếu trong các đám hỏi, lễ cưới. Được hiểu theo nghĩa đơn giản, Backdrop là phông nền và được in dưới nhiều hình thức khác nhau. In ấn Hoàng Gia luôn đảm bảo một mức giá hợp lý nhất, hỗ trợ mọi lúc mọi nơi với chất lượng sản phẩm tốt.",
