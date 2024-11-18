@@ -40,6 +40,14 @@ function Nav() {
           title: "In lụa canvas",
           link: "/danh-muc-in/in-lua-canvas",
         },
+        {
+          title: "In hastag cầm tay",
+          link: "/danh-muc-in/in-hastag-cam-tay",
+        },
+        {
+          title: "In standee",
+          link: "/danh-muc-in/in-standee",
+        },
       ],
     },
     {

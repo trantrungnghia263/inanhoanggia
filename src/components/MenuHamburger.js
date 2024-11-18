@@ -24,6 +24,14 @@ function MenuHamburger({ isOpen, setIsOpen }) {
         },
         { sub_title: "In backlit", sub_link: "/danh-muc-in/in-backlit" },
         { sub_title: "In băng rôn", sub_link: "/danh-muc-in/in-bang-ron" },
+        {
+          sub_title: "In hastag cầm tay",
+          sub_link: "/danh-muc-in/in-hastag-cam-tay",
+        },
+        {
+          sub_title: "In standee",
+          sub_link: "/danh-muc-in/in-standee",
+        },
       ],
     },
     // { title: "Báo giá", link: "/bao-gia" },
