@@ -113,7 +113,7 @@ function ContactForm() {
         <div className="contact-form__item pb-3">
           <label
             htmlFor="fullname"
-            className="block mb-2 text-base font-medium text-gray-500 dark:text-white"
+            className="hidden md:block mb-2 text-base font-medium text-gray-500 dark:text-white"
           >
             Họ và tên
           </label>
@@ -129,7 +129,7 @@ function ContactForm() {
         <div className="contact-form__item pb-3">
           <label
             htmlFor="email"
-            className="block mb-2 text-base font-medium text-gray-500 dark:text-white"
+            className="hidden md:block mb-2 text-base font-medium text-gray-500 dark:text-white"
           >
             Địa chỉ email
           </label>
@@ -145,7 +145,7 @@ function ContactForm() {
         <div className="contact-form__item pb-3">
           <label
             htmlFor="phone"
-            className="block mb-2 text-base font-medium text-gray-500 dark:text-white"
+            className="hidden md:block mb-2 text-base font-medium text-gray-500 dark:text-white"
           >
             Số điện thoại
           </label>
@@ -160,7 +160,7 @@ function ContactForm() {
         </div>
         <label
           htmlFor="message"
-          className="block mb-2 text-base font-medium text-gray-500 dark:text-white"
+          className="hidden md:block mb-2 text-base font-medium text-gray-500 dark:text-white"
         >
           Nội dung
         </label>
