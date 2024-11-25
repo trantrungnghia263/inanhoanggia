@@ -132,7 +132,7 @@ function Footer() {
   const socialMedia = [
     {
       icon: iconFb,
-      url: "https://www.facebook.com/61567073975328",
+      url: "https://www.facebook.com/61567526177876",
       context: "Facebook",
     },
     {
