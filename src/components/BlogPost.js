@@ -10,6 +10,9 @@ import { createSlug } from "../util/createSlug";
 //AOS ANIMATION
 import AOS from "aos";
 
+//Calling WOWjs
+import WOW from "wowjs";
+
 function BlogPost() {
   const [blogs, setBlogs] = useState([]);
   const navigate = useNavigate();
@@ -29,6 +32,12 @@ function BlogPost() {
   useEffect(() => {
     AOS.init({ duration: 300 });
   }, []);
+  useEffect(() => {
+    const wow = new WOW.WOW({
+      live: false,
+    });
+    wow.init();
+  }, []);
 
   return (
     <div className="blog-post py-8">
@@ -36,10 +45,10 @@ function BlogPost() {
         <div className="blog-post__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {blogs.slice(0, 3).map((blog, index) => (
             <div
-              className="blog-card__item"
               key={blog.id}
+              className="blog-card__item wow fadeInUp"
+              data-wow-delay="0.1s"
               onClick={() => handleBlogClick(blog.title)}
-              data-aos="fade-up"
             >
               <BlogCard
                 title={blog.title}

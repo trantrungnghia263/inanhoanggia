@@ -6,6 +6,9 @@ import img1 from "../assets/banner/banner5.jpg";
 //AOS ANIMATION
 import AOS from "aos";
 
+//Calling WOWjs
+import WOW from "wowjs";
+
 function Service() {
   const services = [
     {
@@ -26,6 +29,13 @@ function Service() {
     AOS.init({ duration: 300 });
   }, []);
 
+  useEffect(() => {
+    const wow = new WOW.WOW({
+      live: false,
+    });
+    wow.init();
+  }, []);
+
   return (
     <div className="service">
       <div className="container">
@@ -41,20 +51,20 @@ function Service() {
                 }`}
               >
                 <img
-                  className="transition duration-500 w-full h-full min-h-48 hover:scale-105"
+                  className="transition duration-500 w-full h-full min-h-48 hover:scale-105 wow fadeInUp"
+                  data-wow-delay="0.1s"
                   src={item.url}
                   alt={item.title}
                   loading="lazy"
-                  data-aos="zoom-in"
                 />
               </div>
               <div
-                className={`service__textbox ${
+                className={`service__textbox wow fadeInUp ${
                   index === 1
                     ? "text-left lg:text-right pt-8 pb-4 lg:p-6 lg:pb-2 lg:ps-4 xl:p-12 xl:pb-0 xl:ps-8"
                     : "pb-4 lg:p-6 lg:pb-2 lg:pe-4 xl:p-12 xl:pb-0 xl:pe-8 -order-1 lg:order-1"
                 }`}
-                data-aos="fade-up"
+                data-wow-delay="0.1s"
               >
                 <h3 className="service__title text-lg text-emerald-700 uppercase">
                   {item.title}

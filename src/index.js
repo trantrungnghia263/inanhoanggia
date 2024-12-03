@@ -19,6 +19,9 @@ import "./styles/quotation-page.scss";
 //AOS ANIMATION
 import "aos/dist/aos.css";
 
+// WOW ANIMATION
+import "wowjs/css/libs/animate.css";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 

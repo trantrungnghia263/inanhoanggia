@@ -6,6 +6,9 @@ import AutoScrollImage from "./AutoScrollImage";
 //AOS ANIMATION
 import AOS from "aos";
 
+//Calling WOWjs
+import WOW from "wowjs";
+
 function ScrollImage() {
   const arrImages = [
     {
@@ -30,12 +33,23 @@ function ScrollImage() {
     AOS.init({ duration: 300 });
   }, []);
 
+  useEffect(() => {
+    const wow = new WOW.WOW({
+      live: false,
+    });
+    wow.init();
+  }, []);
+
   return (
     <div className="scroll-image py-10">
       <div className="container">
         <div className="scroll-image__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {arrImages.map((item, index) => (
-            <div className="scroll-image__item" key={index} data-aos="zoom-in">
+            <div
+              key={index}
+              className="scroll-image__item wow fadeInUp"
+              data-wow-delay="0.1s"
+            >
               <AutoScrollImage imageSrc={item.imageSrc} title={item.title} />
             </div>
           ))}

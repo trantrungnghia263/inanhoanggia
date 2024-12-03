@@ -3,6 +3,9 @@ import React, { useEffect } from "react";
 //AOS ANIMATION
 import AOS from "aos";
 
+//Calling WOWjs
+import WOW from "wowjs";
+
 function MultiColumn() {
   const columns = [
     {
@@ -93,16 +96,23 @@ function MultiColumn() {
     AOS.init({ duration: 300 });
   }, []);
 
+  useEffect(() => {
+    const wow = new WOW.WOW({
+      live: false,
+    });
+    wow.init();
+  }, []);
+
   return (
     <div className="multi-columnn py-12">
       <div className="multi-columnn__wrapper">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {columns.map((column, index) => (
+            {columns.map((column) => (
               <div
                 key={column.id}
-                className="p-6 transiton duration-300 border border-dashed border-green-600 rounded-2xl flex flex-col items-center hover:shadow-2xl hover:border-solid hover:border-gray-300"
-                data-aos="fade-up"
+                className="p-6 transiton duration-300 border border-dashed border-green-600 rounded-2xl flex flex-col items-center hover:shadow-2xl hover:border-solid hover:border-gray-300 wow fadeInUp"
+                data-wow-delay="0.1s"
               >
                 <div>{column.icon}</div>
                 <h3 className="mt-4 text-base text-gray-950 uppercase text-center font-semibold">

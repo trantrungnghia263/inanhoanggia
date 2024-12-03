@@ -10,6 +10,9 @@ import { createSlug } from "../util/createSlug";
 //AOS ANIMATION
 import AOS from "aos";
 
+//Calling WOWjs
+import WOW from "wowjs";
+
 function Categories() {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
@@ -30,6 +33,13 @@ function Categories() {
     AOS.init({ duration: 300 });
   }, []);
 
+  useEffect(() => {
+    const wow = new WOW.WOW({
+      live: false,
+    });
+    wow.init();
+  }, []);
+
   return (
     <div className="categories">
       <div className="container">
@@ -37,10 +47,10 @@ function Categories() {
           {categories && categories.length > 0 ? (
             categories.map((item, index) => (
               <div
-                className="categories__item cursor-pointer"
                 key={index}
+                className="categories__item cursor-pointer wow fadeInUp"
+                data-wow-delay="0.1s"
                 onClick={() => handleCategoriesClick(item.title)}
-                data-aos="fade-up"
               >
                 <ItemCard
                   image={item.imageUrl}
