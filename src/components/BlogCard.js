@@ -20,7 +20,7 @@ function BlogCard({ image, link, title, description, date }) {
               src={image}
               alt={title}
               loading="lazy"
-              className="w-full h-72 transition duration-500 group-hover:scale-105"
+              className="w-full aspect-[4/3] transition duration-500 group-hover:scale-105"
             />
           </div>
           <div className="blog-card__date py-1 px-4 absolute -bottom-3 left-1/2 transform -translate-x-1/2 text-sm text-white text-center bg-emerald-700 rounded-3xl w-8/12 md:w-10/12 lg:w-9/12 xl:wi-fit">
