@@ -72,7 +72,7 @@ function BlogDetail() {
                   <h3 className="blog-detail__heading text-lg text-emerald-700 uppercase pb-4">
                     {blog.title}
                   </h3>
-                  <div className="blog-detail__image p-3 border w-fit">
+                  <div className="blog-detail__image p-3 border w-fit m-auto">
                     <img src={blog.image} alt={blog.title} />
                   </div>
                   <p className="blog-detail__description text-base text-gray-500 py-3">
