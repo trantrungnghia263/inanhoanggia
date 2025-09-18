@@ -15,6 +15,7 @@ import "./styles/blog-page.scss";
 import "./styles/introduction-page.scss";
 import "./styles/policy-page.scss";
 import "./styles/quotation-page.scss";
+import "./styles/helpers.scss";
 
 //AOS ANIMATION
 import "aos/dist/aos.css";
