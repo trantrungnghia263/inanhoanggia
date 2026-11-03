@@ -115,7 +115,7 @@ function Footer() {
           />
         </svg>
       ),
-      title: "MST: 0111 197 979 cấp ngày 13 tháng 10 năm 2026",
+      title: "MST: 0111 197 979 cấp ngày 28 tháng 08 năm 2025",
     },
     {
       id: 5,
