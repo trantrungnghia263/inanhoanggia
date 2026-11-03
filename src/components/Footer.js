@@ -259,7 +259,7 @@ function Footer() {
     <div className="footer">
       <div className="footer__top bg-emerald-700">
         <div className="container">
-          <div className="footer__grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols2 xl:grid-cols-4 gap-0 md:gap-y-7 md:gap-5 lg:gap-y-5 py-10 lg:py-14">
+          <div className="footer__grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols2 xl:grid-cols-5 gap-0 md:gap-y-7 md:gap-5 lg:gap-y-5 py-10 lg:py-14">
             <div className="footer__info">
               <div
                 className="footer__title flex items-center justify-between uppercase text-lg text-white py-4 md:pt-0 pb-2 border-b border-solid"
