@@ -44,44 +44,14 @@ function Footer() {
           <path
             stroke="currentColor"
             strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-          />
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"
-          />
-        </svg>
-      ),
-      title: "Số 11 Đông Quan, Quan Hoa, Cầu Giấy, Hà Nội",
-    },
-    {
-      id: 2,
-      icon: (
-        <svg
-          className="w-6 h-6 text-gray-800 dark:text-white text-white"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
             strokeWidth="2"
             d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
           />
         </svg>
       ),
-      title: " inanhoanggia.ht.85@gmail.com",
+      title: "Email: inanhoanggia.ht.85@gmail.com",
     },
-        {
+    {
       id: 2,
       icon: (
         <svg
@@ -102,10 +72,10 @@ function Footer() {
           />
         </svg>
       ),
-      title: "0765.38.4567",
+      title: "Điện thoại: 0765.38.4567",
     },
     {
-      id: 4,
+      id: 3,
       icon: (
         <svg
           className="w-6 h-6 text-gray-800 dark:text-white text-white"
@@ -125,7 +95,118 @@ function Footer() {
           />
         </svg>
       ),
-      title: "T2 - CN / 8:00 AM - 11:00 PM",
+      title: "Giờ làm việc: T2 - CN / 8:00 AM - 11:00 PM",
+    },
+  {
+      id: 4,
+      icon: (
+        <svg
+          className="text-gray-800 text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M16.415 0C16.8253 0 17.1828 0.155142 17.4453 0.466797L17.542 0.584961C17.7513 0.867069 17.8402 1.19753 17.7891 1.55566L17.0244 7.74023H20.666C21.0176 7.74036 21.3283 7.86498 21.5693 8.11621C21.5743 8.12072 21.5801 8.12737 21.585 8.13184C21.5909 8.13819 21.5987 8.14288 21.6045 8.14941C21.8577 8.39093 21.9805 8.70358 21.9805 9.05664C21.9802 9.42391 21.8482 9.74925 21.5889 10.0088C21.3398 10.2579 21.0188 10.37 20.666 10.3701H16.6836L16.2656 13.8105H20.666C21.0176 13.8107 21.3283 13.9353 21.5693 14.1865C21.5744 14.191 21.58 14.1976 21.585 14.2021C21.5909 14.2085 21.5986 14.2132 21.6045 14.2197C21.8577 14.4612 21.9804 14.7739 21.9805 15.127C21.9803 15.4942 21.8482 15.8195 21.5889 16.0791C21.3398 16.3282 21.0188 16.4413 20.666 16.4414H15.9248L15.1484 22.7939L15.1465 22.792C15.1083 23.1409 14.9848 23.4605 14.7256 23.6875C14.4668 23.9139 14.1309 24 13.7754 24C13.3584 24 12.9971 23.8397 12.7334 23.5176L12.7217 23.5039C12.491 23.1957 12.3707 22.8454 12.3994 22.4707L12.4023 22.4521L13.1367 16.4414H9.24609L8.47168 22.7939L8.46973 22.792C8.43155 23.141 8.30613 23.4605 8.04688 23.6875C7.78826 23.9134 7.45281 23.9999 7.09766 24C6.68087 23.9999 6.32027 23.8395 6.05664 23.5176L6.04492 23.5039C5.81353 23.1953 5.6939 22.846 5.72266 22.4707L5.72461 22.4521L6.45801 16.4414H2.87891C2.52569 16.4414 2.20457 16.3304 1.94238 16.0977L1.9248 16.0811L1.90918 16.0635C1.67614 15.8013 1.56267 15.4803 1.5625 15.127C1.56252 14.774 1.6756 14.4514 1.9248 14.2021C2.18454 13.9426 2.51129 13.8106 2.87891 13.8105H6.7998L7.2168 10.3701H2.87891C2.52561 10.3701 2.2046 10.2592 1.94238 10.0264L1.9248 10.0107L1.90918 9.99316C1.67618 9.73104 1.5627 9.40988 1.5625 9.05664C1.5625 8.7036 1.67558 8.38107 1.9248 8.13184C2.18456 7.87218 2.51122 7.74026 2.87891 7.74023H7.55859L8.36426 1.20508C8.40271 0.857026 8.53046 0.538997 8.78906 0.3125C9.04768 0.0865992 9.38315 5.10612e-05 9.73828 0C10.1481 5.22412e-05 10.5032 0.155717 10.7656 0.466797C11.042 0.770903 11.1645 1.13934 11.1094 1.54492L11.1113 1.54688L10.3467 7.74023H14.2373L15.042 1.21094C15.0797 0.860498 15.2066 0.540266 15.4668 0.3125C15.7253 0.086597 16.0601 0.000160849 16.415 0ZM9.58789 13.8105H13.4766L13.8955 10.3701H10.0049L9.58789 13.8105Z"
+            fill="white"
+          />
+        </svg>
+      ),
+      title: "MST: 0111 197 979 cấp ngày 13 tháng 10 năm 2026",
+    },
+    {
+      id: 5,
+      icon: (
+        <svg
+          className="w-6 h-6 text-gray-800 text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+          />
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"
+          />
+        </svg>
+      ),
+      title:
+        "Nơi cấp: Sở Kế hoạch và Đầu tư Thành phố Hà Nội - Phòng Đăng ký Kinh doanh",
+    },
+  {
+      id: 6,
+      icon: (
+        <svg
+          className="w-6 h-6 text-gray-800 dark:text-white text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+          />
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"
+          />
+        </svg>
+      ),
+      title: "Địa chỉ kinh doanh: Số 11 Đông Quan, Quan Hoa, Cầu Giấy, TP Hà Nội",
+    },
+    {
+      id: 7,
+      icon: (
+        <svg
+          className="w-6 h-6 text-gray-800 dark:text-white text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+          />
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"
+          />
+        </svg>
+      ),
+      title: "Trụ sở chính: Nhà 7A, ngách 18, ngõ 181 Xuân Thủy, phường Cầu Giấy, TP Hà Nội",
     },
   ];
 
@@ -184,7 +265,7 @@ function Footer() {
                 className="footer__title flex items-center justify-between uppercase text-lg text-white py-4 md:pt-0 pb-2 border-b border-solid"
                 onClick={() => toggleSection("info")}
               >
-                <p>CÔNG TY IN HOÀNG GIA</p>
+                <p>CÔNG TY TNHH IN ẤN VÀ THƯƠNG MẠI DỊCH VỤ HOÀNG GIA</p>
                 <div className="flex items-center justify-center md:hidden">
                   <svg
                     className={`w-4 h-4 transition-transform font-semibold ${
