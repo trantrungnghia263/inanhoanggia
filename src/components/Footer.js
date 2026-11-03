@@ -176,7 +176,7 @@ function Footer() {
           />
         </svg>
       ),
-      title: "Địa chỉ kinh doanh: Số 11 Đông Quan, Quan Hoa, Cầu Giấy, TP Hà Nội",
+      title: "Trụ sở chính: Nhà 7A, ngách 18, ngõ 181 Xuân Thủy, phường Cầu Giấy, TP Hà Nội",
     },
     {
       id: 7,
@@ -206,7 +206,7 @@ function Footer() {
           />
         </svg>
       ),
-      title: "Trụ sở chính: Nhà 7A, ngách 18, ngõ 181 Xuân Thủy, phường Cầu Giấy, TP Hà Nội",
+      title: "Địa chỉ kinh doanh: Số 11 Đông Quan, Quan Hoa, Cầu Giấy, TP Hà Nội",
     },
   ];
 
