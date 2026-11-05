@@ -12,9 +12,9 @@ function ButtonLink({ link, text, alignment }) {
         <div className="btn-link__text">
           <p>{text}</p>
         </div>
-        <div className="btn-link__icon overflow-hidden transition duration-300 opacity-0 -translate-x-full group-hover:translate-x-0 group-hover:opacity-100">
+        <div className="btn-link__icon overflow-hidden transition duration-300 opacity-0 scale-0 -translate-x-full group-hover:translate-x-0 group-hover:opacity-100 group-hover:scale-100">
           <svg
-            className="w-6 h-6 text-emerald-700 dark:text-white"
+            className="w-6 h-6 text-emerald-700"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="24"

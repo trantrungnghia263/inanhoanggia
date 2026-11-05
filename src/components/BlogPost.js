@@ -20,7 +20,11 @@ function BlogPost() {
   useEffect(() => {
     fetch("/data/blogs.json")
       .then((res) => res.json())
-      .then((data) => setBlogs(data.blogs))
+      .then((data) => {
+        // Trộn ngẫu nhiên danh sách bài viết trước khi lấy 3 bài
+        const shuffled = [...data.blogs].sort(() => Math.random() - 0.5);
+        setBlogs(shuffled.slice(0, 3));
+      })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
@@ -43,7 +47,7 @@ function BlogPost() {
     <div className="blog-post py-8">
       <div className="container">
         <div className="blog-post__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {blogs.slice(0, 3).map((blog, index) => (
+          {blogs.map((blog, index) => (
             <div
               key={blog.id}
               className="blog-card__item wow fadeInUp"

@@ -1,3 +1,11 @@
+/**
+ * Header component - phần đầu trang web
+ * - Hiển thị logo, thông tin liên hệ (điện thoại, email)
+ * - Form tìm kiếm sản phẩm
+ * - Menu điều hướng chính (Nav) trên màn hình lớn
+ * - Menu hamburger drawer trên thiết bị di động
+ * @param {Function} onSearch - callback nhận chuỗi tìm kiếm từ input
+ */
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -9,34 +17,48 @@ import MenuHamburger from "./MenuHamburger";
 import logo from "../assets/logo/logo.png";
 
 function Header({ onSearch }) {
+  // Trạng thái mở/đóng menu hamburger trên mobile
   const [isOpen, setIsOpen] = useState(false);
+  // Chuỗi từ khóa tìm kiếm hiện đang nhập
   const [searchQuery, setSearchQuery] = useState("");
+  // Biến cờ báo lỗi khi người dùng nhấn tìm kiếm mà chưa nhập nội dung
+  const [searchError, setSearchError] = useState(false);
+  // Đối tượng location từ react-router-dom để theo dõi URL hiện tại
   const location = useLocation();
 
-  // Clear search query when location changes
+  // Xóa nội dung tìm kiếm khi người dùng chuyển trang (location thay đổi)
   useEffect(() => {
     setSearchQuery("");
   }, [location]);
 
+  // Cập nhật state searchQuery khi người dùng nhập vào ô tìm kiếm
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+    setSearchError(false);
   };
 
+  // Xử lý khi submit form tìm kiếm
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    if (searchQuery.trim() !== "") {
-      onSearch(searchQuery);
+    if (searchQuery.trim() === "") {
+      setSearchError(true);
+      return;
     }
+    setSearchError(false);
+    onSearch(searchQuery);
   };
 
   return (
     <div className="header sticky top-0 z-50 bg-white border-b">
+      {/* Phần header trên cùng (chỉ hiển thị trên màn hình lg trở lên) */}
       <div className="header__top py-3 hidden lg:block">
         <div className="container">
           <div className="flex justify-between items-center">
+            {/* Logo ảnh - link về trang chủ */}
             <Link to="/" className="header__logo">
               <img src={logo} alt="" className="h-16" />
             </Link>
+            {/* Danh sách thông tin liên hệ (điện thoại, email) */}
             <ul className="header__info hidden gap-2.5 items-center xl:flex">
               <li className="flex items-center gap-1 text-base text-emerald-700 font-semibold">
                 <svg
@@ -88,19 +110,26 @@ function Header({ onSearch }) {
                 </a>
               </li>
             </ul>
+            {/* Form tìm kiếm sản phẩm */}
             <form
               onSubmit={handleSearchSubmit}
               className="header__search flex items-center rounded-3xl ps-4 pe-2 bg-white w-96 border border-emerald-700 text-emerald-700"
             >
               <input
-                className="w-full bg-transparent border-none px-4 py-2.5 ps-0 text-emerald-700 placeholder-green-700 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500"
+                className={`w-full bg-transparent border-none px-4 py-2.5 ps-0 text-emerald-700 placeholder-green-700 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 ${searchError ? "border-b-2 border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
                 type="search"
                 name="search"
                 id="search"
                 placeholder="Tìm kiếm sản phẩm mẫu thiết kế ..."
                 value={searchQuery}
                 onChange={handleSearchChange}
+                required
               />
+              {searchError && (
+                <p className="text-xs text-red-600 mt-1 ml-2">
+                  Vui lòng nhập từ khóa tìm kiếm
+                </p>
+              )}
               <button
                 className="header__btn-search group w-9 h-8 flex items-center justify-center rounded-full transition duration-300 hover:bg-emerald-700 hover:text-white hover:dark:text-white"
                 aria-label="Search"
@@ -126,18 +155,23 @@ function Header({ onSearch }) {
           </div>
         </div>
       </div>
+      {/* Phần header chính chứa menu điều hướng */}
       <div className="header__wrapper py-3 bg-white lg:bg-emerald-800 lg:py-0">
         <div className="container">
+          {/* Menu điều hướng chính (chỉ hiển thị trên màn hình lg trở lên) */}
           <div className="hidden lg:block">
             <Nav />
           </div>
+          {/* Phần header trên mobile (lg:hidden) */}
           <div className="flex items-center justify-between lg:hidden">
+            {/* Logo ảnh trên mobile - link về trang chủ */}
             <Link
               to="/"
               className="header__logo flex items-center justify-center"
             >
               <img src={logo} alt="Logo" className="h-10" />
             </Link>
+            {/* Nút bật menu hamburger drawer trên mobile */}
             <div
               className="header__toggle w-7 h-7 border flex items-center justify-center"
               onClick={() => setIsOpen(true)}
@@ -162,6 +196,7 @@ function Header({ onSearch }) {
           </div>
         </div>
       </div>
+      {/* Drawer menu hamburger hiện ra khi click nút toggle trên mobile */}
       <div className="header__drawer">
         <MenuHamburger isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>

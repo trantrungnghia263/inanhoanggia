@@ -11,7 +11,11 @@ function BlogSidebar() {
   useEffect(() => {
     fetch("/data/blogs.json")
       .then((res) => res.json())
-      .then((data) => setBlogs(data.blogs))
+      .then((data) => {
+        // Trộn ngẫu nhiên danh sách bài viết trước khi lấy 4 bài
+        const shuffled = [...data.blogs].sort(() => Math.random() - 0.5);
+        setBlogs(shuffled.slice(0, 4));
+      })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
@@ -26,7 +30,7 @@ function BlogSidebar() {
         <p>Tin tức mới</p>
       </div>
       <div className="blog-sidebar__wrapper px-4 py-3 bg-slate-50">
-        {blogs.slice(0, 4).map((blog) => (
+        {blogs.map((blog) => (
           <div
             className="blog-sidebar__item group py-3 last:pb-0 first:pt-0 flex items-center border-b last:border-b-0 gap-2 transition duration-300 hover:bg-slate-100 hover:cursor-pointer"
             onClick={() => handleBlogClick(blog.title)}

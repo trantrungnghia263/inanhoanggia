@@ -13,7 +13,7 @@ function ContactForm() {
         "service_ahi7cim",
         "template_pkc7udv",
         form.current,
-        "myTf2EtOyanMtwXCK"
+        "myTf2EtOyanMtwXCK",
       )
       .then(
         (result) => {
@@ -28,7 +28,7 @@ function ContactForm() {
             type: "error",
             message: "Gửi email thất bại, vui lòng thử lại.",
           });
-        }
+        },
       );
   };
 
@@ -113,7 +113,7 @@ function ContactForm() {
         <div className="contact-form__item pb-3">
           <label
             htmlFor="fullname"
-            className="hidden md:block mb-2 text-base font-medium text-gray-500 dark:text-white"
+            className="hidden md:block mb-2 text-base font-medium text-gray-500"
           >
             Họ và tên
           </label>
@@ -129,7 +129,7 @@ function ContactForm() {
         <div className="contact-form__item pb-3">
           <label
             htmlFor="email"
-            className="hidden md:block mb-2 text-base font-medium text-gray-500 dark:text-white"
+            className="hidden md:block mb-2 text-base font-medium text-gray-500"
           >
             Địa chỉ email
           </label>
@@ -145,7 +145,7 @@ function ContactForm() {
         <div className="contact-form__item pb-3">
           <label
             htmlFor="phone"
-            className="hidden md:block mb-2 text-base font-medium text-gray-500 dark:text-white"
+            className="hidden md:block mb-2 text-base font-medium text-gray-500"
           >
             Số điện thoại
           </label>
@@ -160,7 +160,7 @@ function ContactForm() {
         </div>
         <label
           htmlFor="message"
-          className="hidden md:block mb-2 text-base font-medium text-gray-500 dark:text-white"
+          className="hidden md:block mb-2 text-base font-medium text-gray-500"
         >
           Nội dung
         </label>

@@ -10,6 +10,7 @@ import Loading from "../components/Loading";
 
 // FUNCTION
 import { createSlug } from "../util/createSlug";
+import { printCategories } from "../data/printCategoriesData";
 
 //HOOKS
 import useDocumentTitle from "../hooks/useDocumentTitle";
@@ -39,8 +40,17 @@ function CategoriesDetail() {
     return () => clearTimeout(timer);
   }, [slug]);
 
-  // Set page title based on category.title
-  const pageTitle = category ? category.title : "Page not found";
+  // Tìm thông tin từ printCategories để hiển thị title/icon khi không có nội dung
+  const printCategory = printCategories.find(
+    (item) => createSlug(item.title) === slug
+  );
+
+  // Set page title
+  const pageTitle = category
+    ? category.title
+    : printCategory
+      ? printCategory.title
+      : "Page not found";
   useDocumentTitle(pageTitle);
 
   return (
@@ -64,39 +74,85 @@ function CategoriesDetail() {
             className="categories-detail__right col"
             style={{ "--col-sm": "12", "--col-md": "8", "--col-lg": "9" }}
           >
-            {/* Conditional rendering to prevent null access */}
             {loading ? (
               <Loading pt="pt-32" />
-            ) : (
-              category && (
-                <>
-                  <div className="categories-detail__body">
-                    <h3 className="categories-detail__heading text-lg text-emerald-700 uppercase pb-4">
-                      {category.title}
-                    </h3>
-                    <div className="categories-detail__image">
-                      <img
-                        src={category.imageUrl}
-                        alt={category.title}
-                        className="object-cover w-full"
-                      />
-                    </div>
-                    <div
-                      className="categries__content pt-4"
-                      dangerouslySetInnerHTML={{ __html: category.content }}
-                    ></div>
-                    <div className="categories-detail__info pt-8">
-                      <Information />
-                    </div>
+            ) : category ? (
+              <>
+                <div className="categories-detail__body">
+                  <h3 className="categories-detail__heading text-lg text-emerald-700 uppercase pb-4">
+                    {category.title}
+                  </h3>
+                  <div className="categories-detail__image">
+                    <img
+                      src={category.imageUrl}
+                      alt={category.title}
+                      className="object-cover w-full"
+                    />
                   </div>
-                </>
-              )
+                  <div
+                    className="categries__content pt-4"
+                    dangerouslySetInnerHTML={{ __html: category.content }}
+                  ></div>
+                  <div className="categories-detail__info pt-8">
+                    <Information />
+                  </div>
+                </div>
+              </>
+            ) : printCategory ? (
+              // Không tìm thấy trong JSON nhưng có trong printCategories -> hiển thị "đang cập nhật"
+              <div className="categories-detail__body">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className={`${printCategory.color} ${printCategory.iconColor} w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    {printCategory.icon}
+                  </div>
+                  <h3 className="categories-detail__heading text-lg text-emerald-700 uppercase leading-tight">
+                    {printCategory.title}
+                  </h3>
+                </div>
+                <div className="bg-[#F9FAFB] rounded-2xl p-12 text-center border border-gray-100">
+                  <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-xl font-bold text-[#1E1E1E] mb-3">Nội dung đang được cập nhật</h4>
+                  <p className="text-gray-500 mb-6">
+                    Trang "{printCategory.title}" hiện đang được hoàn thiện. Quý khách vui lòng quay lại sau hoặc liên hệ chúng tôi để được tư vấn chi tiết.
+                  </p>
+                  <div className="flex justify-center">
+                    <a href="/lien-he" className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-xl font-semibold transition-colors duration-300">
+                      Liên hệ tư vấn
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="categories-detail__body">
+                <div className="bg-[#F9FAFB] rounded-2xl p-12 text-center border border-gray-100">
+                  <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-xl font-bold text-[#1E1E1E] mb-3">Trang không tồn tại</h4>
+                  <p className="text-gray-500 mb-6">
+                    Trang bạn đang tìm kiếm không có trong hệ thống.
+                  </p>
+                  <div className="flex justify-center">
+                    <a href="/" className="bg-[#1E1E1E] hover:bg-emerald-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors duration-300">
+                      Về trang chủ
+                    </a>
+                  </div>
+                </div>
+              </div>
             )}
           </div>
         </div>
-        <div className="categories-detail__bottom pt-4 border-t">
-          <Tag />
-        </div>
+        {!loading && category && (
+          <div className="categories-detail__bottom pt-4 border-t">
+            <Tag />
+          </div>
+        )}
       </div>
     </div>
   );
