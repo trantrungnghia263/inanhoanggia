@@ -131,12 +131,12 @@ function Header({ onSearch }) {
                 </p>
               )}
               <button
-                className="header__btn-search group w-9 h-8 flex items-center justify-center rounded-full transition duration-300 hover:bg-emerald-700 hover:text-white hover:dark:text-white"
+                className="header__btn-search group w-9 h-8 flex items-center justify-center rounded-full transition duration-300 hover:bg-emerald-700 hover:text-white hover:"
                 aria-label="Search"
                 type="submit"
               >
                 <svg
-                  className="w-4 h-4 dark:text-emerald-700 text-emerald-700 transition duration-300 group-hover:text-white group-hover:dark:text-white"
+                  className="w-4 h-4 dark:text-emerald-700 text-emerald-700 transition duration-300 group-hover:text-white group-hover:"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

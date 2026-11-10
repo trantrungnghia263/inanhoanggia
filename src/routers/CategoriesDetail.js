@@ -12,6 +12,14 @@ import Loading from "../components/Loading";
 import { createSlug } from "../util/createSlug";
 import { printCategories } from "../data/printCategoriesData";
 
+// FIRESTORE
+import { db } from "../firebaseConfig";
+import {
+  collection,
+  query,
+  getDocs,
+} from "firebase/firestore";
+
 //HOOKS
 import useDocumentTitle from "../hooks/useDocumentTitle";
 
@@ -22,22 +30,48 @@ function CategoriesDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      fetch("/data/categories.json")
-        .then((res) => res.json())
-        .then((data) => {
-          const foundCategory = data.categories.find(
-            (categories) => createSlug(categories.title) === slug
-          );
-          setCategory(foundCategory);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-          setLoading(false);
+    const fetchCategory = async () => {
+      try {
+        // BƯỚC 1: Tìm trong Firestore trước (dữ liệu mới thêm qua admin)
+        const categoriesRef = collection(db, "categories");
+        const q = query(categoriesRef);
+        const querySnapshot = await getDocs(q);
+
+        let foundInFirestore = null;
+        querySnapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          if (createSlug(data.title) === slug) {
+            foundInFirestore = { id: docSnap.id, ...data };
+          }
         });
-    }, 1000);
-    return () => clearTimeout(timer);
+
+        if (foundInFirestore) {
+          setCategory(foundInFirestore);
+          setLoading(false);
+          return;
+        }
+
+        // BƯỚC 2: Nếu không có trong Firestore, đọc từ file JSON tĩnh (dữ liệu cũ)
+        fetch("/data/categories.json")
+          .then((res) => res.json())
+          .then((data) => {
+            const foundInJson = data.categories.find(
+              (c) => createSlug(c.title) === slug
+            );
+            setCategory(foundInJson);
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error("Error fetching JSON categories:", error);
+            setLoading(false);
+          });
+      } catch (error) {
+        console.error("Error fetching category:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchCategory();
   }, [slug]);
 
   // Tìm thông tin từ printCategories để hiển thị title/icon khi không có nội dung
@@ -99,7 +133,7 @@ function CategoriesDetail() {
                 </div>
               </>
             ) : printCategory ? (
-              // Không tìm thấy trong JSON nhưng có trong printCategories -> hiển thị "đang cập nhật"
+              // Không tìm thấy trong JSON/Firestore nhưng có trong printCategories -> hiển thị "đang cập nhật"
               <div className="categories-detail__body">
                 <div className="flex items-center gap-3 mb-6">
                   <div className={`${printCategory.color} ${printCategory.iconColor} w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0`}>

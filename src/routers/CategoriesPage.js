@@ -8,6 +8,15 @@ import ItemCard from "../components/ItemCard";
 import HeadingSection from "../components/HeadingSection";
 import Loading from "../components/Loading";
 
+// FIRESTORE
+import { db } from "../firebaseConfig";
+import {
+  collection,
+  query,
+  orderBy,
+  onSnapshot,
+} from "firebase/firestore";
+
 //HOOKS
 import useDocumentTitle from "../hooks/useDocumentTitle";
 
@@ -25,19 +34,46 @@ function CategoriesPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // Lắng nghe real-time từ Firestore
+    const q = query(collection(db, "categories"), orderBy("createdAt", "desc"));
+    const unsub = onSnapshot(q, (snapshot) => {
+      const firestoreCats = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+        source: "firestore",
+      }));
+
+      // Đọc dữ liệu từ file JSON tĩnh (dữ liệu cũ)
       fetch("/data/categories.json")
         .then((res) => res.json())
         .then((data) => {
-          setCategories(data.categories);
+          const jsonCats = (data.categories || []).map((c) => ({
+            ...c,
+            id: c.id || `json-${createSlug(c.title)}`,
+            source: "json",
+          }));
+
+          // Gộp 2 nguồn, tránh trùng lặp theo slug
+          const allCats = [...firestoreCats, ...jsonCats];
+          const seenSlugs = new Set();
+          const mergedCats = allCats.filter((cat) => {
+            const slug = createSlug(cat.title);
+            if (seenSlugs.has(slug)) return false;
+            seenSlugs.add(slug);
+            return true;
+          });
+
+          setCategories(mergedCats);
           setLoading(false);
         })
         .catch((error) => {
-          console.error("Error fetching data:", error);
+          console.error("Error fetching JSON categories:", error);
+          // Nếu JSON lỗi, vẫn hiển thị Firestore
+          setCategories(firestoreCats);
           setLoading(false);
         });
-    }, 1000);
-    return () => clearTimeout(timer);
+    });
+    return () => unsub();
   }, []);
 
   const handleCategoriesClick = (title) => {
@@ -87,7 +123,7 @@ function CategoriesPage() {
                       <div
                         className="categories-page__item wow fadeInUp"
                         data-wow-delay="0.1s"
-                        key={index}
+                        key={item.id}
                         onClick={() => handleCategoriesClick(item.title)}
                       >
                         <ItemCard

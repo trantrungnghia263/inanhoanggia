@@ -56,7 +56,7 @@ function Nav() {
               {item.sub_menu && (
                 <div className="nav__icon flex items-center justify-center">
                   <svg
-                    className="w-6 h-6 text-white dark:text-white transition duration-300 group-hover:rotate-180"
+                    className="w-6 h-6 text-white  transition duration-300 group-hover:rotate-180"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

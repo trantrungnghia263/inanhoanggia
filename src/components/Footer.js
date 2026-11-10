@@ -33,7 +33,7 @@ function Footer() {
       id: 1,
       icon: (
         <svg
-          className="w-6 h-6 text-gray-800 dark:text-white text-white"
+          className="w-6 h-6 text-gray-800  text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -55,7 +55,7 @@ function Footer() {
       id: 2,
       icon: (
         <svg
-          className="w-6 h-6 text-gray-800 dark:text-white text-white"
+          className="w-6 h-6 text-gray-800  text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -78,7 +78,7 @@ function Footer() {
       id: 3,
       icon: (
         <svg
-          className="w-6 h-6 text-gray-800 dark:text-white text-white"
+          className="w-6 h-6 text-gray-800  text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -97,7 +97,7 @@ function Footer() {
       ),
       title: "Giờ làm việc: T2 - CN / 8:00 AM - 11:00 PM",
     },
-  {
+    {
       id: 4,
       icon: (
         <svg
@@ -148,11 +148,11 @@ function Footer() {
       title:
         "Nơi cấp: Sở Kế hoạch và Đầu tư Thành phố Hà Nội - Phòng Đăng ký Kinh doanh",
     },
-  {
+    {
       id: 6,
       icon: (
         <svg
-          className="w-6 h-6 text-gray-800 dark:text-white text-white"
+          className="w-6 h-6 text-gray-800  text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -176,13 +176,14 @@ function Footer() {
           />
         </svg>
       ),
-      title: "Trụ sở chính: Nhà 7A, ngách 18, ngõ 181 Xuân Thủy, phường Cầu Giấy, TP Hà Nội",
+      title:
+        "Trụ sở chính: Nhà 7A, ngách 18, ngõ 181 Xuân Thủy, phường Cầu Giấy, TP Hà Nội",
     },
     {
       id: 7,
       icon: (
         <svg
-          className="w-6 h-6 text-gray-800 dark:text-white text-white"
+          className="w-6 h-6 text-gray-800  text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -206,7 +207,8 @@ function Footer() {
           />
         </svg>
       ),
-      title: "Địa chỉ kinh doanh: Số 11 Đông Quan, Quan Hoa, Cầu Giấy, TP Hà Nội",
+      title:
+        "Địa chỉ kinh doanh: Số 11 Đông Quan, Quan Hoa, Cầu Giấy, TP Hà Nội",
     },
   ];
 
@@ -406,7 +408,7 @@ function Footer() {
                       >
                         <div className="flex items-center">
                           <svg
-                            className="w-[16px] h-[16px] text-white dark:text-white"
+                            className="w-[16px] h-[16px] text-white "
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"

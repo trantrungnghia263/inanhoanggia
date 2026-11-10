@@ -85,7 +85,7 @@
     "github.copilot.enable": {
       "*": true
     },
-    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorTheme": "Dark Modern",
     "update.mode": "manual",
     "http.systemCertificates": false,
     "workbench.colorCustomizations": {

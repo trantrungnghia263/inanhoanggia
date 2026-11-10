@@ -23,7 +23,7 @@ function Contact() {
       id: 1,
       icon: (
         <svg
-          className="w-6 h-6 text-gray-500 dark:text-white"
+          className="w-6 h-6 text-gray-500 "
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -53,7 +53,7 @@ function Contact() {
       id: 2,
       icon: (
         <svg
-          className="w-6 h-6 text-gray-500  dark:text-white"
+          className="w-6 h-6 text-gray-500  "
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -76,7 +76,7 @@ function Contact() {
       id: 3,
       icon: (
         <svg
-          className="w-6 h-6 text-gray-500  dark:text-white"
+          className="w-6 h-6 text-gray-500  "
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -98,7 +98,7 @@ function Contact() {
       id: 4,
       icon: (
         <svg
-          className="w-6 h-6 text-gray-500 dark:text-white"
+          className="w-6 h-6 text-gray-500 "
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
