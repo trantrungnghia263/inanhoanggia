@@ -74,24 +74,24 @@ function Header({ onSearch }) {
                 </svg>
                 <a href="tel: 0765384567">0765.38.4567</a>
               </li>
-              <li className="flex items-center gap-1 text-base text-emerald-700 font-semibold">
-                <svg
-                  className="w-6 h-6 text-gray-800"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="rgb(4 120 87)"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4Zm12 12V5H7v11h10Zm-5 1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <a href="tel: 0392804456">0392.804.456</a>
-              </li>
+              // <li className="flex items-center gap-1 text-base text-emerald-700 font-semibold">
+              //   <svg
+              //     className="w-6 h-6 text-gray-800"
+              //     aria-hidden="true"
+              //     xmlns="http://www.w3.org/2000/svg"
+              //     width="24"
+              //     height="24"
+              //     fill="rgb(4 120 87)"
+              //     viewBox="0 0 24 24"
+              //   >
+              //     <path
+              //       fillRule="evenodd"
+              //       d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4Zm12 12V5H7v11h10Zm-5 1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12Z"
+              //       clipRule="evenodd"
+              //     />
+              //   </svg>
+              //   <a href="tel: 0392804456">0392.804.456</a>
+              // </li>
               <li className="flex items-center gap-1 text-base text-emerald-700 font-semibold">
                 <svg
                   className="w-6 h-6 text-gray-800"
